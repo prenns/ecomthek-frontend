@@ -3,7 +3,6 @@ import 'flowbite';
 import Link from 'next/link';
 import { categories, getCategoryBySlug } from '../lib/posts';
 import Script from 'next/script'
-import { GoogleTagManager } from '@next/third-parties/google'
 
 export default function RootLayout({ children }) {
     return (
@@ -16,7 +15,20 @@ export default function RootLayout({ children }) {
             <script id="usercentrics-cmp" data-settings-id="LyLFSKLFbONAlI" data-language="de" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async> </script>
             <script src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" async></script>
 
+            <Script id="gtm" strategy="afterInteractive">
+                {`
+                (function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TKFHN8M3');`}
+            </Script>
+
             <body>
+                <noscript
+                    dangerouslySetInnerHTML={{
+                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFHN8M3"
+                        height="0" width="0" style="display:none;visibility:hidden"/>`,
+                    }}
+                />
                 <header>
                     <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
                         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
@@ -197,10 +209,8 @@ export default function RootLayout({ children }) {
                                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
                                     >
                                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z" clip-rule="evenodd" />
+                                            <path fillRule="evenodd" d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z" clipRule="evenodd" />
                                         </svg>
-
-
                                     </a>
                                 </li>
 
@@ -209,7 +219,7 @@ export default function RootLayout({ children }) {
                     </div>
                 </footer>
             </body>
-            <GoogleTagManager gtmId="GTM-TKFHN8M3" />
+
         </html>
     )
 }
