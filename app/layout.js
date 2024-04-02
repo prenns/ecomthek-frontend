@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
             <script id="usercentrics-cmp" data-settings-id="LyLFSKLFbONAlI" data-language="de" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async> </script>
             <script src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" async></script>
 
-            <Script id="gtm" strategy="afterInteractive">
+            <Script data-usercentrics="Google Analytics" id="gtm" strategy="afterInteractive">
                 {`
                 (function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
