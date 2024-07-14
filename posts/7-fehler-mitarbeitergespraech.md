@@ -21,7 +21,7 @@ Obwohl das Führungsinstrument in der Theorie bereits hinreichend dargelegt wurd
 
 Ein schlecht vorbereitetes MAG kann mehr Schaden anrichten, als es nützt. Eine Führungskraft, die im Gespräch den Eindruck vermittelt, sich kaum Gedanken über die bisherigen Leistungen und potenziellen Entwicklungsmöglichkeiten des Mitarbeiters gemacht zu haben erreicht mit dem Gespräch ziemlich sicher keine Verbesserung der Zusammenarbeit. So ein Gespräch motiviert kaum zur intensiven Bemühung um das Erreichen der Unternehmens- bzw. heruntergebrochenen Ziele des Mitarbeiters. Leider werden aber viel zu häufig schlecht vorbereitete Gespräche geführt. 
 
-__Besser:__ Schaffen speziell beim Management Bewusstsein für die negativen Folgen „schlechter“ Mitarbeitergespräche. Diese können neben gedrückter Motivation sogar bis hin zur inneren Kündigung oder zum Austritt des Mitarbeiters führen. Dies passiert vor allem dann, wenn das Gefühl aufkommt, dass die eigenen Leistungen nicht geschätzt werden oder keine persönliche Weiterentwicklung möglich ist.
+__Besser:__ Schaffe speziell beim Management Bewusstsein für die negativen Folgen „schlechter“ Mitarbeitergespräche. Diese können neben gedrückter Motivation sogar bis hin zur inneren Kündigung oder zum Austritt des Mitarbeiters führen. Dies passiert vor allem dann, wenn das Gefühl aufkommt, dass die eigenen Leistungen nicht geschätzt werden oder keine persönliche Weiterentwicklung möglich ist.
 Um bei der Vorbereitung der Gespräche zu unterstützen, sollten Informationsunterlagen sowohl für Mitarbeiter wie auch Führungskräfte zur Verfügung stehen (z.B. Ziele, Nicht-Ziele des MAG, Inhalte, Zeitplan) 
 
 ## 2.	Falsche Erwartungen an das Gespräch
@@ -52,7 +52,7 @@ __Besser:__ Hier bedarf es wieder an Aufklärungsarbeit (durch HR? ;-) )  um auf
 
 Mitarbeiter: *„Zweimal wurde der Termin bereits verschoben, heute findet er endlich statt. Allerdings hätte das Gespräch bereits vor 10 Minuten beginnen sollen – vom Chef allerdings noch keine Spur. Naja ein paar Minuten warte ich noch, bevor ich mich wieder an die Arbeit mache... ah da kommt er ja.“* 
 
-Vorgesetzer: *„Hallo Herr X, die Verspätung tut mir leid, aber Sie wissen ja: Den Kunden kann ich natürlich nicht einfach abwimmeln und sagen, "ich muss jetzt meinem Mitarbeiter Feedback geben." Aber gut, da bin ich ja. Dann bringen wir’s mal hinter uns, mein Folgetermin startet schon wieder um halb.“*
+Vorgesetzer: *„Hallo X, die Verspätung tut mir leid, aber du weißt ja: Den Kunden kann ich natürlich nicht einfach abwimmeln und sagen, "ich muss jetzt meinem Mitarbeiter Feedback geben." Aber gut, da bin ich ja. Dann bringen wir’s mal hinter uns, mein Folgetermin startet schon wieder um halb.“*
 
 (hier bedarf es keiner weiteren Ausführung zum Fehler)
 
@@ -69,7 +69,7 @@ Bereits im Vorfeld sollte festgelegt werden, wie die Ergebnisse aus den Gespräc
 
 ## 7.	Nichteinhaltung der Feedbackregeln
 
-Feedback geben/nehmen will gelernt sein! Leider ist dies gerade im Mitarbeitergespräch immer wieder ein heikles Thema. Kritik wird oft nicht entsprechend formuliert und konkretisiert oder der Mitarbeiter fühlt sich auf den Schlips getreten und fürchtet sich im schlimmsten Fall bereits nach dem Gespräch schon vor dem nächsten MAG. Der falsche Umgang mit Feedback kann gerade in einer heiklen Situation wie dem Mitarbeitergespräch fatale Folgen nach sich ziehen.
+Feedback geben/nehmen will gelernt sein. Leider ist dies gerade im Mitarbeitergespräch immer wieder ein heikles Thema. Kritik wird oft nicht entsprechend formuliert und konkretisiert oder der Mitarbeiter fühlt sich auf den Schlips getreten und fürchtet sich im schlimmsten Fall bereits nach dem Gespräch schon vor dem nächsten MAG. Der falsche Umgang mit Feedback kann gerade in einer heiklen Situation wie dem Mitarbeitergespräch fatale Folgen nach sich ziehen.
 
 
 __Besser:__
@@ -84,7 +84,7 @@ __Feedback geben:__
 
 __Feedback nehmen:__
 -	Nicht rechtfertigen
--	Zuhören!
+-	Zuhören
 -	Unklarheiten gezielt hinterfragen
 -	Kritik annehmen 
 
