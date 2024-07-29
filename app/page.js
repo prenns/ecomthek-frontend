@@ -4,7 +4,7 @@ import BlogSnippet from '../components/blogSnippet';
 export const metadata = {
     title: 'E-Commerce Knowledge on demand | Ecomthek',
     description: 'Hochwertige Inhalte und praktische Ratschläge zu den Themen Performance Marketing, E-Mail Marketing, Produktentwicklung und vielen mehr. Unser Ziel ist es, dir dabei zu helfen, dein E-Commerce Business erfolgreich aufzubauen und zu skalieren.',
-  };
+};
 
 export default async function Home() {
 
@@ -36,10 +36,16 @@ export default async function Home() {
                     </Link>
 
                     <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                        E-Commerce knowledge <span className="from-[#210370] to-[#7AD9C4] bg-clip-text text-transparent bg-gradient-to-r">on demand.</span>
+                        E-Commerce knowledge   <span className="mx-1 relative inline-block stroke-current">
+                            on demand
+                            <svg className="text-primary-600 absolute -bottom-0.1 w-full max-h-1.8" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none">
+                                <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
+                            </svg>
+                        </span>
                     </h1>
-                    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-                    Hochwertige Inhalte und praktische Ratschläge zu den Themen Performance Marketing, E-Mail Marketing, Produktentwicklung und vielen mehr.  Unser Ziel ist es, dir dabei zu helfen, dein E-Commerce Business erfolgreich aufzubauen und zu skalieren.
+                    <p className="mb-8 mt-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                        Hochwertige Inhalte und praktische Ratschläge zu den Themen Performance Marketing, E-Mail Marketing, Produktentwicklung und vielen mehr.  Unser Ziel ist es, dir dabei zu helfen, dein E-Commerce Business erfolgreich aufzubauen und zu skalieren.
                     </p>
                     <Link
                         href="/notion-templates/marketing-calendar"

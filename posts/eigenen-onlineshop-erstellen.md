@@ -56,19 +56,19 @@ Ich empfehle dir, die Domain entweder direkt über Shopify zu kaufen, oder über
 
 1. Gehe zu _Einstellungen \> Domains_ und klicke auf „Bestehende Domain verbinden“
 2. Gib deine Domain ein
-3. Shopify überprüft, ob du deine Domain automatisch verknüpfen kannst, oder ob du selbst Einstellungen bei deinem Domain-Anbieter durchrühren musst. Folge den Anweisungen auf dem Bildschirm. Es kann sein, dass du dich dazu bei deinem Domain-Anbieter einloggen musst.
+3. Shopify überprüft, ob du deine Domain automatisch verknüpfen kannst, oder ob du selbst Einstellungen bei deinem Domain-Anbieter durchführen musst. Folge den Anweisungen auf dem Bildschirm. Es kann sein, dass du dich dazu bei deinem Domain-Anbieter einloggen musst.
 4. Im [Shopify Manual](https://help.shopify.com/de/manual/domains/add-a-domain/connecting-domains/connect-domain-manual#change-your-dns-records) ist genau erklärt, welche Einstellungen du vornehmen musst
 5. Klicke auf „Verbindung überprüfen“
 6. Wenn alles funktioniert hat, kannst du deine neue Domain als Primäre Domain für deinen Shop festlegen
 
 ### Schritt 2: Zahlungsanbieter einrichten
 
-Einer der wichtigsten Elemente beim Abschließen einer Onlinetransaktion ist die Zahlung. Grundsätzlich kann man sagen, dass je mehr Zahlungsarten du anbietest, desto besser. Jeder Kunde hat seine eigenen Präferenzen, wie er gerne Online bezahlt und je mehr du abdeckst, desto höher ist die Wahrscheinlichkeit, dass deine Kunden ein positives Einkaufserlebnis haben. Außerdem können die Zahlungsarten einen starken Effekt auf die Conversion Rate haben. Wenn eine gewisse Zahlungsart fehlt, kaufen manche Kunden gar nicht erst ein.
+Eines der wichtigsten Elemente beim Abschließen einer Onlinetransaktion ist die Zahlung. Grundsätzlich kann man sagen, dass je mehr Zahlungsarten du anbietest, desto besser. Jeder Kunde hat seine eigenen Präferenzen, wie er gerne Online bezahlt und je mehr du abdeckst, desto höher ist die Wahrscheinlichkeit, dass deine Kunden ein positives Einkaufserlebnis haben. Außerdem können die Zahlungsarten einen starken Effekt auf die Conversion Rate haben. Wenn eine gewisse Zahlungsart fehlt, kaufen manche Kunden gar nicht erst ein.
 
 > Mit Shopify Payments und PayPal deckst du 99% aller relevanten Zahlungsarten ab
 
 #### Wie richte ich Shopify Payments ein?
-Shopify bietet mit Shopify Payments einen eigenes Payment Gateway an, um Zahlungen der Kunden abzuwickeln. Das ist die beste Möglichkeit, um schnell und einfach Zahlungen über z.B. Klarna, Kreditkarte und Sofortüberweisung zu akzeptieren, ohne dass du dafür komplizierte Integrationen und Einrichtungen durchführen musst. Du musst dich auch nicht extra bei Klarna dafür registierten, das läuft alles über Shopify bzw. das Admin Dashboard.
+Shopify bietet mit Shopify Payments einen eigenes Payment Gateway an, um Zahlungen der Kunden abzuwickeln. Das ist die beste Möglichkeit, um schnell und einfach Zahlungen über z.B. Klarna, Kreditkarte und Sofortüberweisung zu akzeptieren, ohne dass du dafür komplizierte Integrationen und Einrichtungen durchführen musst. Du musst dich auch nicht extra bei Klarna dafür registrieren, das läuft alles über Shopify bzw. das Admin Dashboard.
 
 #### Wie richte ich PayPal ein?
 Neben Shopify Payments empfehle ich dir auch PayPal anzubinden. Das ist nicht in Shopify Payments enthalten, die Anbindung an Shopify ist aber kinderleicht. Du musst dir lediglich ein PayPal Geschäftskonto eröffnen und deine Anmeldedaten danach in Shopify hinterlegen. Ein Großteil der Kunden im deutschsprachigen Raum bezahlt gerne über PayPal, du solltest deshalb auf jeden Fall diese Möglichkeit in deinem Shop anbieten. Das kann die Conversion Rate sowie die Customer Experience maßgeblich beeinflussen.
