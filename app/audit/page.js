@@ -22,7 +22,7 @@ export default function LandingAuditPage() {
                         >
                             {" "}
                             <span className="ml-5 text-sm font-medium">
-                                Für Onlineshops & Brands mit 10k+ € Monatsumsatz
+                                Für Onlineshops & Brands mit &gt; 10k € Monatsumsatz
                             </span>
                             <svg
                                 className="w-2.5 h-2.5 ms-2 rtl:rotate-180"
@@ -52,7 +52,7 @@ export default function LandingAuditPage() {
                             </span>
                         </h1>
                         <p className="text-xl mb-8 mt-12">
-                            Wir nehmen dein Business unter die Lupe und erstellen einen individuellen Handlungsplan damit du:
+                            Wir nehmen dein Business unter die Lupe und erstellen einen individuellen Handlungsplan, damit du:
 
                         </p>
 
@@ -72,7 +72,7 @@ export default function LandingAuditPage() {
                                     />
                                 </svg>
                                 <span className="font-light leading-tight">
-                                    Deine Umsätze planbar und profitabel steigern kannst
+                                    deine Umsätze planbar und profitabel steigern kannst
                                 </span>
                             </li>
                             <li className="flex space-x-2.5">
@@ -90,7 +90,7 @@ export default function LandingAuditPage() {
                                     />
                                 </svg>
                                 <span className="font-light leading-tight">
-                                    Deine Fixkosten auf ein Minimum reduzierst
+                                    deine Fixkosten auf ein Minimum reduzierst
                                 </span>
                             </li>
                             <li className="flex space-x-2.5">
@@ -108,7 +108,7 @@ export default function LandingAuditPage() {
                                     />
                                 </svg>
                                 <span className="font-light leading-tight">
-                                    Dein Leben unabhängig und finanziell frei leben kannst
+                                    dein Leben unabhängig und finanziell frei leben kannst
                                 </span>
                             </li>
                         </ul>
@@ -4587,7 +4587,7 @@ export default function LandingAuditPage() {
                         Du hast Probleme, auf das nächste Level zu kommen?
                     </h2>
                     <p className="font-light text-gray-500 dark:text-gray-400 sm:text-xl">
-                        Gerade am Anfang ist es schwierig die richtigen Hebel zu finden. Man kommt nicht weiter und weiß gar nicht wo man Anfangen soll. Das Internet ist voll mit verschiedenen Lösungsansätzen und das paralysiert dich nur noch mehr.
+                        Gerade am Anfang ist es schwierig, die richtigen Hebel zu finden. Man kommt nicht weiter und weiß gar nicht, wo man anfangen soll. Die Vielzahl an Lösungsansätzen im Internet kann dich zusätzlich verunsichern.
                         Vermutlich kennst du mindestens eines dieser Probleme:
                     </p>
                 </div>
@@ -4607,7 +4607,7 @@ export default function LandingAuditPage() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Umsatzschwankungen</h3>
                         <p className="font-light text-gray-500 dark:text-gray-400">
-                            Du schaffest es nicht, regelmäßige Bestellungen zu generieren. Manche Tage laufen sehr gut und dann läuft es für lange Zeit wieder gar nicht.
+                            Du schaffest es nicht, regelmäßige Bestellungen zu generieren. Manche Tage laufen sehr gut und dann läuft es für lange Zeit wieder gar nicht und du weißt nicht warum.
                         </p>
                     </div>
                     <div className="p-6 bg-white rounded shadow dark:bg-gray-800">
@@ -4622,8 +4622,7 @@ export default function LandingAuditPage() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Schlechter ROAS</h3>
                         <p className="font-light text-gray-500 dark:text-gray-400">
-                            Dein ROAS ist zu niedrig und du weißt nicht wie du es schaffst, stabil einen guten ROAS zu haben während du gleichzeitg
-                            deinen Ad Spend skalierst.
+                        Dein ROAS ist zu niedrig und du weißt nicht, wie du stabil einen guten ROAS erreichen kannst, während du gleichzeitig deine Werbeausgaben skalierst.
                         </p>
                     </div>
                     <div className="p-6 bg-white rounded shadow dark:bg-gray-800">
@@ -4672,11 +4671,11 @@ export default function LandingAuditPage() {
                             Wir kennen deine Probleme
                         </h2>
                         <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-                            Wir haben selbst mehrere E-Commerce Brands gegründet, darunter wunderklein.com, welche 7-stellige
+                            Wir besitzen selbst mehrere E-Commerce Brands, darunter wunderklein.com, welche 7-stellige
                             Jahresumsätze generieren.
                         </p>
                         <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-                            Und wir hatten alle der oben genannten Probleme. Wir möchten dir mit unserer Expertise helfen, damit du Zeit und Kosten sparst.
+                            Die oben genannten Probleme kennen wir nur zu gut. Wir möchten dir mit unserer Expertise helfen, damit du Zeit und Kosten sparst und wieder mehr Freude an deinem Business hast.
                         </p>
 
                     </div>
@@ -4736,8 +4735,8 @@ export default function LandingAuditPage() {
                             Endlich wieder Gewinne erzielen
                         </h2>
                         <p className="mb-8 font-light lg:text-xl">
-                            Umsatz ist nicht gleich Gewinn. Und das wird von vielen oft ignoriert, wenn sie davon sprechen zu skalieren.
-                            Du kannst kein nachhaltiges Unternehmen aufbauen, welches dir sowohl in guten als auch in schlechten Zeiten einen stabilen Cahslow ermöglicht, wenn du
+                            Umsatz ist nicht gleich Gewinn und das wird von vielen oft ignoriert, wenn sie davon sprechen zu skalieren.
+                            Du kannst kein nachhaltig erfolgreiches Unternehmen aufbauen, welches dir sowohl in guten als auch in schlechten Zeiten einen stabilen Cashflow ermöglicht, wenn du
                             dich nicht auf die Gewinne fokussierst.
                         </p>
                         {/* List */}
@@ -4801,7 +4800,7 @@ export default function LandingAuditPage() {
                             </li>
                         </ul>
                         <p className="mb-8 font-light lg:text-xl">
-                            Der E-Commerce Audit ermöglicht es dir, ein nachhaltiges Unternehmen mit Fokus auf Gewinn aufzubauen.
+                            Der E-Commerce Audit ermöglicht es dir, ein gesundes Unternehmen mit Fokus auf Gewinn aufzubauen.
                         </p>
                     </div>
                     <img
@@ -4820,7 +4819,7 @@ export default function LandingAuditPage() {
                         src="/images/widget-data.png"
                         alt="office feature image"
                     />
-                    <div className="text-gray-500 sm:text-lg dark:text-gray-400">
+                    <div className="text-gray-500 mt-8 sm:text-lg dark:text-gray-400">
                         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                             Ein solides Trafficsystem, welches dein Wachstum garantiert
                         </h2>
@@ -4964,7 +4963,7 @@ export default function LandingAuditPage() {
                             </li>
                         </ul>
                         <p className="mb-8 font-light lg:text-xl">
-                            Verschwende nicht zu viel Zeit damit, zu raten was für Elemente in deinem Shop gut ankommen könnten. Verwende
+                            Verschwende nicht zu viel Zeit damit, zu raten welche für Elemente in deinem Shop gut ankommen könnten. Verwende
                             stattdessen bewährte Elemente und Taktiken aus dem Handlungsplan.
                         </p>
                     </div>
@@ -4994,7 +4993,7 @@ export default function LandingAuditPage() {
                         zu skalieren
                     </h2>
                     <p className="mt-6 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-                        Wie genau können wir dir jetzt helfen? Wir begleiten dich von der Analyse bis zur Umsetzung, mit einem Plan der perfekt
+                        Wie genau können wir dir jetzt helfen? Wir begleiten dich von der Analyse bis zur Umsetzung mit einem Plan, der perfekt
                         auf dein Business und deine Probleme abgestimmt ist.
                     </p>
                     <div className="mt-8 lg:mt-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -5107,8 +5106,8 @@ export default function LandingAuditPage() {
                         Was beinhaltet der Handlungsplan?
                     </h2>
                     <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-                        Wir betrachten dein Business ganzheitlich. Es bringt nichts wenn du nur einen Bereich (z.B. Performance Marketing) optimierst.
-                        Deshalb ist der Handlungsplan auch in verschiedene Bereiche unterteilt und beschreibt dir jeweils die empfohlenen Maßnahmen.
+                        Wir betrachten dein Business ganzheitlich. Es bringt nichts, nur einen Bereich (z.B. Performance Marketing) zu optimieren.
+                        Deshalb ist der Handlungsplan auch in verschiedene Bereiche unterteilt und bietet empfiehlt dir umfassende Maßnahmen zu jedem Thema.
                     </p>
                 </div>
                 <div className="p-4 mt-2 rounded-lg sm:p-12 lg:mt-16 bg-gray-50 dark:bg-gray-800">
@@ -5130,7 +5129,7 @@ export default function LandingAuditPage() {
                                     Branding Strategie
                                 </h3>
                                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Ziel ist nicht nur ein Onlineshop. Baue dir eine profitable Brand auf, welche für
+                                    Baue dir eine profitable Brand auf, welche für
                                     viele Jahre am Markt bestehen wird.
                                 </p>
                             </div>
@@ -5149,7 +5148,7 @@ export default function LandingAuditPage() {
                                     Operations & Logistics
                                 </h3>
                                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Senke deine Produktkosten, optmiere Prozessabläufe und minimiere deine Fixkosten.
+                                    Senke deine Produktkosten, optimiere Prozessabläufe und minimiere deine Fixkosten.
                                 </p>
                             </div>
                         </div>
@@ -5186,7 +5185,7 @@ export default function LandingAuditPage() {
                                 </h3>
                                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                                     Werbekosten werden höher und es wird immer schwieriger, profitable Kampagnen zu schalten.
-                                    Lerne, wie du dem entgegenwirken kannst.
+                                    Lerne, wie du dich trotzdem gegen die Konkurrenz durchsetzen kannst.
                                 </p>
                             </div>
                         </div>
@@ -5205,7 +5204,7 @@ export default function LandingAuditPage() {
                                     Website Optimierung
                                 </h3>
                                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Wir analysieren deinen Onlineshop und geben dir einen konkreten Plan, welche Seiten wie angepasst werden müssen, um
+                                    Wir analysieren deinen Onlineshop und geben dir einen konkreten Plan, welche Anpassung nötig sind, um
                                     die Conversion Rate deines Shops zu steigern.
                                 </p>
                             </div>
@@ -5262,7 +5261,7 @@ export default function LandingAuditPage() {
                                     Live Calls
                                 </h3>
                                 <p className="mb-2 font-light text-gray-500 dark:text-gray-400">
-                                    In mehreren Live Calls besprechen wir gemeinsame alle deine Fragen und geben Feedback
+                                    In mehreren Live Calls besprechen wir gemeinsam alle deine Fragen und geben Feedback
                                     zu der Umsetzung der Punkte im Handlungsplan
                                 </p>
 
@@ -5289,14 +5288,14 @@ export default function LandingAuditPage() {
                     </div>
                     <p className="text-sm">
                         *In der Regel dauert unsere Zusammenarbeit 1 Monat. 
-                        In diesem Zeitraum ist es möglich alle Punkte umzusetzen.
+                        In diesem Zeitraum ist es möglich, alle Punkte umzusetzen.
                     </p>
                 </div>
             </div>
         </section>
 
 
-        <section className="bg-white dark:bg-gray-900 antialiased">
+        <section className="bg-white mt-12 dark:bg-gray-900 antialiased">
 
             <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
@@ -5304,7 +5303,7 @@ export default function LandingAuditPage() {
                 </h2>
                 <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
                     Du willst endlich ein Business aufbauen, welches dich dein Leben so leben lässt wie du es dir schon immer erträumt hast?
-                    Dann buche jetzt dein kostenloses Erstgespräch und du bist schon einen Schritt näher.
+                    Dann buche jetzt dein kostenloses Erstgespräch und du bist deinem Ziel schon einen Schritt näher.
                 </p>
             </div>
 
@@ -5391,7 +5390,7 @@ export default function LandingAuditPage() {
                                 <p className="font-light text-gray-500 dark:text-gray-400">
                                     Aus eigener Erfahrung wissen wir, dass man Anfang gar nicht so genau weiß was man tut.
                                     Man lernt meistens aus Fehlern. Und die kosten Zeit und Geld. Verkürze diesen Prozess indem du
-                                    deine Ressourcen in unsere Hilfe investierst. Wir haben für dich bereits diese Fehler gemacht.
+                                    deine Ressourcen in unsere Hilfe investierst. Wir haben diese Fehler bereits für dich gemacht.
                                 </p>
                             </div>
                         </div>
@@ -5425,7 +5424,7 @@ export default function LandingAuditPage() {
                                     Erfahrungen von echten E-Commerce Unternehmern
                                 </h3>
                                 <p className="font-light text-gray-500 dark:text-gray-400">
-                                    Wir sind selbst E-Commerce Unternehmer mit eigenen Onlineshops und wissen, was notwendig ist um eine erfolgreiche Brand aufzubauen.
+                                    Wir sind selbst E-Commerce Unternehmer mit eigenen Onlineshops und wissen was notwendig ist, um eine erfolgreiche Brand aufzubauen.
                                 </p>
                             </div>
                         </div>
@@ -5440,10 +5439,15 @@ export default function LandingAuditPage() {
                                     E-Commerce Audit & Strategieplan
                                 </h3>
                                 <div className="flex items-center md:hidden">
-                                    <div className="mr-1 text-xl font-extrabold text-gray-900 lg:text-5xl dark:text-white">
-                                        $599
+                                    <div className="mr-1 text-2xl font-extrabold text-gray-900 lg:text-5xl dark:text-white">
+                                    <span className="mx-1 relative inline-block stroke-current">
+                                    3.997€
+                                    <svg className="text-primary-600 absolute -bottom-0.1 w-full max-h-1.8" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+                                        preserveAspectRatio="none">
+                                        <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
+                                    </svg>
+                                </span>
                                     </div>
-                                    <span className="text-gray-500 dark:text-gray-400">/month</span>
                                 </div>
                             </div>
                             <p className="text-lg font-light text-gray-500 dark:text-gray-400 md:mr-2">
@@ -5730,7 +5734,7 @@ export default function LandingAuditPage() {
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
                                 Nach dem Erstgespräch starten wir sofort mit einer sorgfältigen Analyse deines Business. Dabei schauen wir uns alle Bereiche genau an. Von Internen Prozessen, Finanzen, externen Dienstleistern,
                                 bis hin zum technischen Setup, Creatives und Software. Diese Analyse dauert ca. eine Woche. Danach bekommst du den Handlungsplan elektronisch zur Verfügung gestellt und wir besprechen alle
-                                Punkt im Detail während eines Live Calls.
+                                Punkte im Detail während eines Live Calls.
                             </p>
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
                                 Nun liegt es an dir, die empfohlenen Handlungen umzusetzen. Wir stehen dir dann noch 3 Wochen zur Verfügung und beantworten alle deine
@@ -5754,8 +5758,8 @@ export default function LandingAuditPage() {
                         <AccordionTitle>Gib es eine Geld-Zurück-Garantie?</AccordionTitle>
                         <AccordionContent>
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                Ja. Es gibt eine Geld-Zurück-Garantie. Solltest du wirklich nicht Zufrieden sein und keine sichtbaren Verbesserungen nach der Umsetzung
-                                sehen, bekommst du dein Geld zurück.
+                                Ja. Es gibt eine Geld-Zurück-Garantie. Solltest du wirklich nicht zufrieden sein und keine entsprechenden Verbesserungen nach der Umsetzung
+                                erzielen, bekommst du dein Geld zurück.
                             </p>
                         </AccordionContent>
                     </AccordionPanel>
