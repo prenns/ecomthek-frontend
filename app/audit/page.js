@@ -4889,7 +4889,7 @@ export default function LandingAuditPage() {
 
                         </ul>
                         <p className="font-light lg:text-xl">
-                            Mit dem E-Commcerce Audit Handlungsplan hast du eine Anleitung, um eine Trafficsystem für dein spezifisches Business aufzubauen, welches dir
+                            Mit dem E-Commcerce Audit Handlungsplan hast du eine Anleitung, um ein Trafficsystem für dein spezifisches Business aufzubauen, welches dir
                             ein gesundes und profitables Wachstum ermöglicht.
                         </p>
                     </div>
@@ -4901,7 +4901,7 @@ export default function LandingAuditPage() {
                         </h2>
                         <p className="mb-8 font-light lg:text-xl">
                             Wenn dein Onlineshop schlecht aufgebaut ist, dann bringt dir der beste Traffic auch nichts. Selbst kleine Verbesserungen der Website
-                            können einen große Wirkung auf die Conversion Rate und letzlich auch den Umsatz haben.
+                            können einen große Wirkung auf die Conversion Rate und letztlich auch den Umsatz haben.
                         </p>
                         {/* List */}
                         <ul
@@ -4965,7 +4965,7 @@ export default function LandingAuditPage() {
                         </ul>
                         <p className="mb-8 font-light lg:text-xl">
                             Verschwende nicht zu viel Zeit damit, zu raten was für Elemente in deinem Shop gut ankommen könnten. Verwende
-                            stattdessen bewährte Elemente und Taktiken.
+                            stattdessen bewährte Elemente und Taktiken aus dem Handlungsplan.
                         </p>
                     </div>
                     <img
@@ -5028,7 +5028,7 @@ export default function LandingAuditPage() {
                             </svg>
                             <h3 className="mb-2 text-xl font-bold dark:text-white">Handlungsplan</h3>
                             <p className="mb-4 text-gray-500 dark:text-gray-400">
-                                Danach erstellen wir einen konkreten Handlungsplan für dich, welcher konkrete Schritte für die Umsetzung enthält
+                                Danach erstellen wir einen Handlungsplan für dich, welcher konkrete Schritte für die Umsetzung enthält
                             </p>
 
                         </div>
@@ -5185,8 +5185,8 @@ export default function LandingAuditPage() {
                                     Traffic Systeme & Performance Marketing
                                 </h3>
                                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Werbekosten werden immer höher und es wird immer schwieriger, profitable Kampagnen zu schlaten.
-                                    Lerne wie du dem entgegenwirken kannst.
+                                    Werbekosten werden höher und es wird immer schwieriger, profitable Kampagnen zu schalten.
+                                    Lerne, wie du dem entgegenwirken kannst.
                                 </p>
                             </div>
                         </div>
@@ -5223,7 +5223,7 @@ export default function LandingAuditPage() {
                                     E-Mail System
                                 </h3>
                                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Ein effektives E-Mail System ist ein Muss für jede E-Commerce Brand. Wir zeigen dir was du tun kannst, um
+                                    Ein effektives E-Mail Marketing System ist ein Muss für jede E-Commerce Brand. Wir zeigen dir was du tun kannst, um
                                     deine Umsätze über E-Mail Marketing zu erhöhen.
                                 </p>
                             </div>
@@ -5374,7 +5374,7 @@ export default function LandingAuditPage() {
                         Ist dein E-Commerce Business richtig aufgebaut?
                     </h2>
                     <p className="mb-8 font-light lg:text-xl dark:text-gray-400">
-                        Wir finden es für dich heraus und helfen dir mit dem best möglichen Plan, aus deinem Onlineshop eine profitable E-Commerce Brand zu machen.
+                        Wir finden es für dich heraus und helfen dir mit dem bestmöglichen Plan, aus deinem Onlineshop eine profitable E-Commerce Brand zu machen.
                     </p>
                     <div className="grid gap-8 py-8 border-t border-gray-200 lg:grid-cols-1 dark:border-gray-700 sm:grid-cols-2">
               
@@ -5720,7 +5720,7 @@ export default function LandingAuditPage() {
                                Wir möchten dir den bestmöglichen Service bieten und
                                damit wir uns schon vorab gut auf das Gespräch vorbereiten können, benötigen wir ein paar Daten
                                über dein Business. Du bekommst nach der Buchung des Erstgesprächs einen Link zu einem Google Forms Formular, welches du noch
-                               vor dem Gespräch ausfüllst. Nur so können wir uns optimal auf Dich & dein Business vorbereiten und dir sagen ob ein Investment in den E-Commerce Audit lohnenswert ist.
+                               vor dem Gespräch ausfüllst. Nur so können wir uns optimal auf dich & dein Business vorbereiten und dir sagen ob ein Investment in den E-Commerce Audit lohnenswert ist.
                             </p>
                         </AccordionContent>
                     </AccordionPanel>
@@ -5728,8 +5728,8 @@ export default function LandingAuditPage() {
                         <AccordionTitle>Wie lange läuft unsere Zusammenarbeit?</AccordionTitle>
                         <AccordionContent>
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                Nach dem Erstgespräch starten wir sofort mit einer sorgfältigen Analyse deines Business. Dabei schauen wir uns alles an von Internen Prozessen, Finanzen, externen Dienstleistern,
-                                bis hin zum technischen Setup, Creatives und Software. Diese Analyse dauert ca. eine Woche. Danach bekommst du die Handlungsplan elektronisch zur Verfügung gestellt und wir besprechen alle
+                                Nach dem Erstgespräch starten wir sofort mit einer sorgfältigen Analyse deines Business. Dabei schauen wir uns alle Bereiche genau an. Von Internen Prozessen, Finanzen, externen Dienstleistern,
+                                bis hin zum technischen Setup, Creatives und Software. Diese Analyse dauert ca. eine Woche. Danach bekommst du den Handlungsplan elektronisch zur Verfügung gestellt und wir besprechen alle
                                 Punkt im Detail während eines Live Calls.
                             </p>
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
