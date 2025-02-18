@@ -5441,7 +5441,7 @@ export default function LandingAuditPage() {
                                 <div className="flex items-center md:hidden">
                                     <div className="mr-1 text-2xl font-extrabold text-gray-900 lg:text-5xl dark:text-white">
                                     <span className="mx-1 relative inline-block stroke-current">
-                                    997€
+                                    1.997€
                                     <svg className="text-primary-600 absolute -bottom-0.1 w-full max-h-1.8" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
                                         preserveAspectRatio="none">
                                         <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
@@ -5458,7 +5458,7 @@ export default function LandingAuditPage() {
                             <div className="text-2xl font-extrabold text-gray-900 lg:text-5xl dark:text-white">
 
                                 <span className="mx-1 relative inline-block stroke-current">
-                                    997€
+                                    1.997€
                                     <svg className="text-primary-600 absolute -bottom-0.1 w-full max-h-1.8" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
                                         preserveAspectRatio="none">
                                         <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
