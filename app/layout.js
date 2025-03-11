@@ -8,19 +8,21 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
+            <head>
+                <link rel="preconnect" href="//privacy-proxy.usercentrics.eu" />
+                <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script" />
 
-            <link rel="preconnect" href="//privacy-proxy.usercentrics.eu" />
-            <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script" />
-            <script id="usercentrics-cmp" data-settings-id="LyLFSKLFbONAlI" data-language="de" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async> </script>
-            <script src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" async></script>
+                <script id="usercentrics-cmp" data-settings-id="LyLFSKLFbONAlI" data-language="de" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async> </script>
+                <script src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" async></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
 
-            <Script data-usercentrics="Google Analytics" id="gtm" strategy="afterInteractive">
-                {`
+                <Script data-usercentrics="Google Analytics" id="gtm" strategy="afterInteractive">
+                    {`
                 (function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TKFHN8M3');`}
-            </Script>
+                </Script>
+            </head>
 
             <body>
                 <noscript
@@ -45,8 +47,12 @@ export default function RootLayout({ children }) {
                             </div>
                             <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                                 <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+
                                     <li>
                                         <Link href="/" className="block py-2 pr-4 pl-3 border-b border-gray-100 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-primary-500 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-primary-500 lg:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/software" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Software</Link>
                                     </li>
                                     <li>
                                         <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Notion Marketing Template</Link>
@@ -60,7 +66,9 @@ export default function RootLayout({ children }) {
                     </nav>
 
                 </header>
-                {children}
+                <main>
+                    {children}
+                </main>
                 <footer className="border-t border-gray-100 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                     <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-16">
                         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
@@ -147,7 +155,7 @@ export default function RootLayout({ children }) {
                                 ECOMTHEK
                             </a>
                             <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
-                                © 2024{" "}
+                                © 2025{" "}
                                 <a href="#" className="hover:underline">
                                     ECOMTHEK
                                 </a>

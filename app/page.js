@@ -175,7 +175,7 @@ export default async function Home() {
             </section>
 
 
-            <BlogSnippet />
+            <BlogSnippet title="Du möchtest Dein E-Commerce Wissen erweitern?" description="Entdecke unsere neuesten Beiträge zum Thema E-Commerce" />
 
         </div>
     );
