@@ -2,6 +2,9 @@ import { createClient } from '../../utils/supabase/server';
 import SoftwareListItem from '../../components/softwareListItem';
 import CategoryListItem from '../../components/categoryListItem';
 import Link from 'next/link';
+import SoftwareHero from '../../components/softwareHero';
+
+
 
 export default async function Softwares() {
     const supabase = await createClient();
@@ -11,140 +14,10 @@ export default async function Softwares() {
         <main>
 
             <section className="bg-white dark:bg-gray-900">
-
-                <section className="bg-white dark:bg-gray-900">
-                    <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-8">
-                        <div className="grid items-center gap-8 mt-4 mb-8 lg:mb-16 lg:gap-12 lg:grid-cols-12">
-                            <div className="col-span-6 text-center sm:mb-6 lg:text-left lg:mb-0">
-
-                                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
-                                    Finde die perfekte Software für dein E-Commerce-Wachstum
-                                </h1>
-                                <p className="max-w-xl mx-auto mb-6 font-light text-gray-500 lg:mx-0 xl:mb-8 md:text-lg xl:text-xl dark:text-gray-400">
-                                    Finde die passenden Tools für dein Business. Vergleiche Software, entdecke Expertenbewertungen und wähle die perfekte Lösung – einfach & effizient
-                                </p>
-                                <form className="mx-auto lg:ml-0" action="#">
-                                    <label
-                                        htmlFor="default-search"
-                                        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-                                    >
-                                        Suchen
-                                    </label>
-                                    <div className="relative">
-                                        <input
-                                            type="search"
-                                            id="default-search"
-                                            className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                            placeholder="Suche nach Software, Kategorien, Lösungen..."
-                                            required=""
-                                        />
-                                        <button
-                                            type="submit"
-                                            className="text-white inline-flex items-center absolute right-2.5 bottom-2.5 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                                        >
-                                            <svg
-                                                className="w-4 h-4 mr-2 -ml-1"
-                                                fill="currentColor"
-                                                viewBox="0 0 20 20"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                            Software finden
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className="col-span-6">
-                                <img
-                                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/search-mockup.png"
-                                    className="dark:hidden"
-                                    alt="mockup"
-                                />
-                                <img
-                                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/search-mockup-dark.png"
-                                    className="hidden dark:block"
-                                    alt="mockup dark"
-                                />
-                            </div>
-                        </div>
-                        <div className="grid gap-8 sm:gap-12 md:grid-cols-3">
-                            <div className="flex justify-center">
-                                <svg
-                                    className="w-6 h-6 mr-3 text-primary-600 dark:text-primary-500 shrink-0"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <div>
-                                    <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
-                                        Customizable Categories
-                                    </h3>
-                                    <p className="font-light text-gray-500 dark:text-gray-400">
-                                        Host code that you don't want to share with the world in private.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex justify-center">
-                                <svg
-                                    className="w-6 h-6 mr-3 text-primary-600 dark:text-primary-500 shrink-0"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <div>
-                                    <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
-                                        Private repos
-                                    </h3>
-                                    <p className="font-light text-gray-500 dark:text-gray-400">
-                                        Host code that you don't want to share with the world in private.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex justify-center">
-                                <svg
-                                    className="w-6 h-6 mr-3 text-primary-600 dark:text-primary-500 shrink-0"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <div>
-                                    <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
-                                        Tracking Saving Rate
-                                    </h3>
-                                    <p className="font-light text-gray-500 dark:text-gray-400">
-                                        Host code that you don't want to share with the world in private.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-          {/*       <section className="bg-white dark:bg-gray-900">
+                <div className="mt-10">
+                    <SoftwareHero />
+                </div>
+                {/*       <section className="bg-white dark:bg-gray-900">
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16">
                         <div className="max-w-2xl mx-auto text-center">
                             <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
