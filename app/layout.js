@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
                                         <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Notion Marketing Template</Link>
                                     </li>
                                     <li>
-                                        <Link href="/audit" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Audit</Link>
+                                        <Link href="/audit" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Shop Audit</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -140,8 +140,24 @@ export default function RootLayout({ children }) {
                                             href={`/notion-templates/marketing-calendar`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                            All-In-One E-Commerce Marketing Hub
+                                        Marketing Template
                                         </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                    Services
+                                </h2>
+                                <ul className="text-gray-500 dark:text-gray-400">
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/audit`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                           Shop Audit
+                                        </Link>
+                                       
                                     </li>
                                 </ul>
                             </div>

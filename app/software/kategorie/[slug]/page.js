@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { createClient } from '../../../../utils/supabase/server'
 import SoftwareCategoryListItem from '../../../../components/softwareCategoryListItem';
+import { markdownToHtml } from '../../../../utils/textUtils';
 
 export default async function Category({ params }) {
 
@@ -10,9 +11,11 @@ export default async function Category({ params }) {
         name,
         slug,
         description,
+        seo_description,
         software ( *, software_suitability (id, type), expert_software_rating(*) )
       `).eq('slug', params.slug).limit(1).single();
-          console.log(category);
+    
+      console.log(category);
 
     return (
         <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-12">
@@ -91,8 +94,8 @@ export default async function Category({ params }) {
                                 </li>
                             </ol>
                         </nav>
-                        <h2 className="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                        {category.name}
+                        <h2 className="mt-6 text-3xl font-semibold text-gray-900 dark:text-white">
+                            {category.name}
                         </h2>
                     </div>
                     <div className="flex items-center space-x-4">
@@ -138,7 +141,7 @@ export default async function Category({ params }) {
                                 />
                             </svg>
                         </button>
-                        <button
+                        {/*  <button
                             id="sortDropdownButton2"
                             data-dropdown-toggle="dropdownSort2"
                             type="button"
@@ -179,7 +182,7 @@ export default async function Category({ params }) {
                                     d="m19 9-7 7-7-7"
                                 />
                             </svg>
-                        </button>
+                        </button> */}
                         <div
                             id="dropdownSort2"
                             className="z-50 hidden w-40 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700"
@@ -222,117 +225,25 @@ export default async function Category({ params }) {
                 </div>
                 <div className="gap-6 lg:flex">
                     {/* Sidenav */}
-                    <aside
+                    {/*                     <aside
                         id="sidebar"
                         className="hidden h-full w-80 shrink-0 border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:block lg:rounded-lg"
                     >
-                        <div
-                            id="accordion-flush"
-                            data-accordion="open"
-                            data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                            data-inactive-classes="text-gray-500 dark:text-gray-400"
-                        >
-                            <h2 id="accordion-flush-heading-1">
-                                <button
-                                    type="button"
-                                    className="mb-4 flex w-full items-center justify-between font-medium text-gray-500 hover:text-gray-900 dark:bg-transparent dark:text-gray-400 dark:hover:text-white rtl:text-right dark:!bg-gray-800"
-                                    data-accordion-target="#accordion-flush-body-1"
-                                    aria-expanded="true"
-                                    aria-controls="accordion-flush-body-1"
-                                >
-                                    <span>Geeignet für</span>
-                                    <svg
-                                        data-accordion-icon=""
-                                        className="h-5 w-5 shrink-0 rotate-180"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={24}
-                                        height={24}
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="m5 15 7-7 7 7"
-                                        />
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div
-                                id="accordion-flush-body-1"
-                                className="mb-4 hidden space-y-4"
-                                aria-labelledby="accordion-flush-heading-1"
-                            >
-
-                                <div className="space-y-3">
-                                    <div className="flex items-center">
-                                        <input
-                                            id="tv-audio-video"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
-                                        />
-                                        <label
-                                            htmlFor="tv-audio-video"
-                                            className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        >
-                                            {" "}
-                                            bis 100.000€ Jahresumsatz{" "}
-                                        </label>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <input
-                                            id="desktop-pc"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
-                                            defaultChecked=""
-                                        />
-                                        <label
-                                            htmlFor="desktop-pc"
-                                            className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        >
-                                            {" "}
-                                            100.000€ - 1 Mio. € Jahresumsatz{" "}
-                                        </label>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <input
-                                            id="gaming"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
-                                        />
-                                        <label
-                                            htmlFor="gaming"
-                                            className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        >
-                                            {" "}
-                                            1 Mio. € - 10 Mio. € Jahresumsatz{" "}
-                                        </label>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </aside>
+                    
+                    </aside> */}
                     {/* Right content */}
                     <div className="w-full">
                         {/* Product Cards */}
                         <div className="grid gap-4">
-                     
 
-                        {category.software.map(softwareItem => {
-                            return <SoftwareCategoryListItem key={softwareItem.id} software={softwareItem} />
-                        })}
+
+                            {category.software.map(softwareItem => {
+                                return <SoftwareCategoryListItem key={softwareItem.id} software={softwareItem} />
+                            })}
 
                         </div>
                         {/* Pagination */}
-                        <nav
+                        {/*                         <nav
                             className="mt-6 flex items-center justify-center sm:mt-8"
                             aria-label="Page navigation example"
                         >
@@ -429,7 +340,7 @@ export default async function Category({ params }) {
                                     </a>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> */}
                     </div>
                 </div>
                 {/* Mobile Drawer */}
@@ -1279,7 +1190,9 @@ export default async function Category({ params }) {
                         </div>
                     </div>
                 </form>
+                <div className="max-w-none mt-16 mx-auto format lg:format-lg" dangerouslySetInnerHTML={{ __html: await markdownToHtml(category.seo_description)}} />
             </div>
+           
         </section>
 
     );

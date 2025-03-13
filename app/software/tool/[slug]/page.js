@@ -2,6 +2,28 @@ import BlogSnippet from '../../../../components/blogSnippet';
 import { createClient } from '../../../../utils/supabase/server'
 import { mapTypeToRevenue } from '../../../../utils/textUtils';
 import Link from 'next/link';
+
+
+export async function generateMetadata({ params }, parent) {
+
+    const supabase = await createClient();
+    const { data: software } = await supabase.from("software").select(`
+        *, 
+        software_suitability(id, type),
+        problems(name, id, slug),
+        software_feature(*),
+        software_procons(*),
+        software_category(*),
+        expert_software_rating(*)
+        `).eq('slug', params.slug).limit(1).single();
+ 
+  return {
+    title: `${software.name} – Efahrungen und Features` + ' | Ecomthek',
+    description: `Erfahre mehr über die Funktionen und Erfahrungen mit ${software.name}. Alle wichtigen Features im Überblick – jetzt entdecken!`
+  }
+}
+
+
 export default async function Software({ params }) {
 
     const supabase = await createClient();

@@ -1,15 +1,42 @@
 import { createClient } from '../../utils/supabase/server';
-import SoftwareListItem from '../../components/softwareListItem';
+import SoftwareCard from '../../components/softwareCard';
 import CategoryListItem from '../../components/categoryListItem';
 import Link from 'next/link';
 import SoftwareHero from '../../components/softwareHero';
 
 
-
 export default async function Softwares() {
+    
     const supabase = await createClient();
-    const { data: softwares } = await supabase.from("software").select();
     const { data: categories } = await supabase.from("software_category").select();
+
+    const mainCategories = [
+        { id: 45, name: 'Shopsysteme', slug: 'shopsysteme' },
+        { id: 1, name: 'E-Mail Marketing' },
+        { id: 46, name: 'Kundenservice' },
+        { id: 47, name: 'Rechnungs- und Buchhaltungssysteme' },
+        { id: 48, name: 'Bewertungen & Trust' },
+        { id: 49, name: 'Umfragen' },
+        { id: 50, name: 'Versand' }
+      ];
+      
+      const results = await Promise.all(mainCategories.map(async ({ id, name, slug }) => {
+        let { data } = await supabase
+          .from("software")
+          .select(`
+            *,
+            problems(name, id, slug),
+            expert_software_rating!left(*)
+          `)
+          .eq('software_category_id', id)
+          .order('overall_score', { referencedTable: 'expert_software_rating', ascending: true })
+          .limit(4); 
+      
+        data = data || [];
+        
+        return { category: {id, name, slug}, data };
+      }));
+
     return (
         <main>
 
@@ -208,7 +235,6 @@ export default async function Softwares() {
                     </div>
                 </section> */}
 
-
                 <div className="mt-16 mx-auto max-w-screen-xl px-4 2xl:px-0">
                     <div className="mb-4 flex items-center justify-between gap-4 md:mb-8">
                         <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
@@ -223,19 +249,25 @@ export default async function Softwares() {
                     </div>
                 </div>
 
-                <div className="mt-16 mx-auto max-w-screen-xl text-left pt-8 mb-8">
-                    <div className="mb-4 flex items-center justify-between gap-4 md:mb-8">
-                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                            Top E-Commerce Software
-                        </h2>
-                    </div>
-                    <div className="grid gap-8 lg:grid-cols-2">
-                        {softwares.map(software => {
-                            return <SoftwareListItem key={software.id} {...software} />
-                        })}
-                    </div>
-                </div>
 
+                {results.map(({ category, data }) => (
+                    <div className="mt-16 mx-auto max-w-screen-xl text-left pt-8 mb-8">
+
+                        <div className="mb-4">
+                            <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+                                Top {category.name} Software
+                            </h2>
+                            <Link href={`/software/kategorie/${category.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Alle ansehen</Link>
+                        </div>
+                        
+                        <div className="grid gap-8 lg:grid-cols-4">
+                            {data.map(software => {
+                                return <SoftwareCard key={software.id} software={software} />
+                            })}
+                        </div>
+                    </div>
+
+                ))}
 
             </section >
         </main>

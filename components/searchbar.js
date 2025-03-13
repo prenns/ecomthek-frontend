@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from "react";
 import { searchSoftware } from "../utils/supabase/api";
+import { useRouter } from 'next/navigation'
 
 const SearchBar = () => {
 
@@ -8,22 +9,8 @@ const SearchBar = () => {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const dropdownRef = useRef(null);
+    const router = useRouter();
 
-
-    // Example data (replace with API data if needed)
-    const data = [
-        "Apple",
-        "Banana",
-        "Cherry",
-        "Date",
-        "Grape",
-        "Mango",
-        "Orange",
-        "Pineapple",
-    ];
-
-
-    // Function to call the async helper
     const fetchResults = (searchTerm) => {
         if (!searchTerm) {
             setResults([]);
@@ -34,7 +21,6 @@ const SearchBar = () => {
 
         searchSoftware(searchTerm)
             .then((data) => {
-                console.log(data);
                 setResults(data);
             })
             .catch((error) => {
@@ -67,9 +53,9 @@ const SearchBar = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const handleSelect = (value) => {
-        setQuery(value);
-        setResults([]);
+    //Route to software tool after selecting entry
+    const handleSelect = (software) => {
+        router.push(`/software/tool/${software.slug}`)
     };
 
     // Highlight matching text

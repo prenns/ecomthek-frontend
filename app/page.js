@@ -95,7 +95,7 @@ export default async function Home() {
 
                             <Link href="/audit">
                                 <h5 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    E-Commerce Audit
+                                   Shop Audit
                                 </h5>
                             </Link>
 

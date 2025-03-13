@@ -1,3 +1,5 @@
+import { remark } from 'remark';
+import html from 'remark-html';
 
 export function mapTypeToRevenue(size) {
     const revenueMap = {
@@ -7,4 +9,12 @@ export function mapTypeToRevenue(size) {
         "ENTERPRISE": "10 Mio. €+"
     };
     return revenueMap[size];
+}
+
+export async function markdownToHtml(markdown)  {
+    const processedContent = await remark()
+        .use(html)
+        .process(markdown);
+
+    return processedContent.toString();
 }
