@@ -1,5 +1,9 @@
 import Link from 'next/link';
 import { mapTypeToRevenue } from '../utils/textUtils';
+import { Button } from "flowbite-react";
+import { CiShare1 } from "react-icons/ci";
+
+
 export default function SoftwareCategoryListItem({ software }) {
 
     let expertRating = null;
@@ -11,7 +15,7 @@ export default function SoftwareCategoryListItem({ software }) {
 
     if (expertRating !== null) {
 
-    
+
         scoreSnippet = (
             <div className="text-sm flex items-center">
 
@@ -60,22 +64,74 @@ export default function SoftwareCategoryListItem({ software }) {
                     })}
                 </div>
                 <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{software.description}
-                {" "}
-                <Link href={`/software/tool/${software.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
+                    {" "}
+                    <Link href={`/software/tool/${software.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
 
                 </p>
-                <button
-                    type="button"
-                    className="absolute top-0 right-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm md:text-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h2 className="mb-2 text-xl font-semibold text-gray-900">Funktionen</h2>
+                        <ul className="mb-2 max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                            {software.software_feature.map(feature => {
+                                return (
+                                    <li key={feature.id} className="flex items-center">
+                                        <svg
+                                            className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 shrink-0"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        {feature.name}
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 className="mb-2 text-xl font-semibold text-gray-900">Für</h2>
+                        <ul className="mb-2 max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                            {software.problems.map(problem => {
+                                return (
+                                    <li key={problem.id} className="flex items-center">
+                                        <svg
+                                            className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 shrink-0"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        {problem.name}
+                                    </li>
+                                );
+                            })}
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <Button
+                    as={Link}
+                    href={software.website_url}
+                    size="lg"
+                    color="blue"
+                    target="_blank"
+                    className="absolute font-bold top-0 right-10 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 inline-flex items-center"
                 >
 
-                    <svg className="rtl:rotate-180 w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
-                    </svg>
+                    <CiShare1 className="mr-2 h-5 w-5" />
 
                     {software.name} {software.cta_text}
 
-                </button>
+                </Button>
 
             </div>
         </div>

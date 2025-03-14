@@ -3,7 +3,7 @@ import { createClient } from '../../../../utils/supabase/server'
 import SoftwareCategoryListItem from '../../../../components/softwareCategoryListItem';
 import { markdownToHtml } from '../../../../utils/textUtils';
 
-export default async function Category({ params }) {
+export async function generateMetadata({ params }, parent) {
 
     const supabase = await createClient();
     const { data: category } = await supabase.from("software_category").select(`
@@ -15,7 +15,26 @@ export default async function Category({ params }) {
         software ( *, software_suitability (id, type), expert_software_rating(*) )
       `).eq('slug', params.slug).limit(1).single();
     
-      console.log(category);
+ 
+  return {
+    title: `Die besten ${category.name} im Vergleich 2025` + ' | Ecomthek',
+    description: `Erfahre mehr über die besten ${category.name} Tools 2025 für deinen Onlineshop. Alle wichtigen Features im Überblick – jetzt entdecken!`
+  }
+}
+
+
+export default async function Category({ params }) {
+
+    const supabase = await createClient();
+    const { data: category } = await supabase.from("software_category").select(`
+        id,
+        name,
+        slug,
+        description,
+        seo_description,
+        software ( *, software_suitability (id, type), expert_software_rating(*), problems(name, id, slug), software_feature(*) )
+      `).eq('slug', params.slug).limit(1).single();
+    
 
     return (
         <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-12">
@@ -25,8 +44,8 @@ export default async function Category({ params }) {
                         <nav className="flex" aria-label="Breadcrumb">
                             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                                 <li className="inline-flex items-center">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        href="/software"
                                         className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white"
                                     >
                                         <svg
@@ -38,35 +57,8 @@ export default async function Category({ params }) {
                                         >
                                             <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                                         </svg>
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <div className="flex items-center">
-                                        <svg
-                                            className="h-5 w-5 text-gray-400 rtl:rotate-180"
-                                            aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width={24}
-                                            height={24}
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="m9 5 7 7-7 7"
-                                            />
-                                        </svg>
-                                        <Link
-                                            href="/software"
-                                            className="ms-1 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white md:ms-2"
-                                        >
-                                            Software
-                                        </Link>
-                                    </div>
+                                        Software
+                                    </Link>
                                 </li>
                                 <li aria-current="page">
                                     <div className="flex items-center">
@@ -97,6 +89,7 @@ export default async function Category({ params }) {
                         <h2 className="mt-6 text-3xl font-semibold text-gray-900 dark:text-white">
                             {category.name}
                         </h2>
+                        <p className="mb-3 mt-6 font-normal text-gray-500 dark:text-gray-400">{category.description}</p>
                     </div>
                     <div className="flex items-center space-x-4">
                         <button

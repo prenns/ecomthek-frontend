@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { mapTypeToRevenue } from '../utils/textUtils';
+import { Button } from "flowbite-react";
+import { CiShare1 } from "react-icons/ci";
+
 export default function SoftwareCategoryListItem({ software }) {
 
     let expertRating = null;
@@ -63,18 +66,18 @@ export default function SoftwareCategoryListItem({ software }) {
                 <Link href={`/software/tool/${software.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
 
                 </p>
-                <button
-                    type="button"
-                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                <Button
+                    as={Link}
+                    size="sm"
+                    target="_blank"
+                    color="blue"
+                    href={software.website_url}
+                    className="hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium"
                 >
-
-                    <svg className="rtl:rotate-180 w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
-                    </svg>
-
+                    <CiShare1 className="mr-2 h-5 w-5" />
                     {software.name} {software.cta_text}
 
-                </button>
+                </Button>
 
             </div>
         </div>
