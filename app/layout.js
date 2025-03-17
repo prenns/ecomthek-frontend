@@ -161,6 +161,58 @@ export default function RootLayout({ children }) {
                                     </li>
                                 </ul>
                             </div>
+                            <div>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                    Top E-Commerce Software
+                                </h2>
+                                <ul className="text-gray-500 dark:text-gray-400">
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/software/kategorie/shopsysteme`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                           Onlineshopsysteme
+                                        </Link>
+                                       
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/software/kategorie/shopsysteme`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                            E-Mail Marketing Software
+                                        </Link>
+                                       
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/software/kategorie/kundenservice`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                            Kundenservice Software
+                                        </Link>
+                                       
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/software/kategorie/rechnungs-und-buchhaltungssysteme`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                            Rechnungs- und Buchhaltungssysteme
+                                        </Link>
+                                       
+                                    </li>
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/software/kategorie/versand-und-fulfillment`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                           Fulfillment & Versandsoftware
+                                        </Link>
+                                       
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div className="mt-8 text-center sm:mt-12 lg:mt-16">
                             <a

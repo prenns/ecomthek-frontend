@@ -8,6 +8,7 @@ const SearchBar = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [highlightedIndex, setHighlightedIndex] = useState(0);
     const dropdownRef = useRef(null);
     const router = useRouter();
 
@@ -22,6 +23,7 @@ const SearchBar = () => {
         searchSoftware(searchTerm)
             .then((data) => {
                 setResults(data);
+                setHighlightedIndex(0);
             })
             .catch((error) => {
                 console.error('Error fetching results:', error);
@@ -58,6 +60,29 @@ const SearchBar = () => {
         router.push(`/software/tool/${software.slug}`)
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (results.length > 0 && highlightedIndex >= 0) {
+            handleSelect(results[highlightedIndex]);
+        }
+    };
+
+    // Handle keyboard navigation
+    const handleKeyDown = (e) => {
+        if (e.key === "ArrowDown") {
+            setHighlightedIndex((prev) =>
+                prev < results.length - 1 ? prev + 1 : prev
+            );
+        } else if (e.key === "ArrowUp") {
+            setHighlightedIndex((prev) =>
+                prev > 0 ? prev - 1 : prev
+            );
+        } else if (e.key === "Enter") {
+            handleSubmit(e);
+        }
+    };
+
     // Highlight matching text
     const getHighlightedText = (text, query) => {
         if (!query) return text;
@@ -70,7 +95,7 @@ const SearchBar = () => {
 
     return (
 
-        <form ref={dropdownRef} className="relative mx-auto lg:ml-0" action="#">
+        <form onSubmit={handleSubmit} ref={dropdownRef} className="relative mx-auto lg:ml-0" action="#">
             <label
                 htmlFor="default-search"
                 className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -81,6 +106,7 @@ const SearchBar = () => {
                 <input
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     type="search"
                     id="default-search"
                     className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -123,11 +149,15 @@ const SearchBar = () => {
             {/* Dropdown for Results */}
             {results.length > 0 && (
                 <div className="absolute text-left z-10 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg">
-                    {results.map((item) => (
+                    {results.map((item,index) => (
                         <div
                             key={item.id}
                             onClick={() => handleSelect(item)}
-                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            className={`px-4 py-2 cursor-pointer ${
+                                index === highlightedIndex
+                                    ? "bg-gray-100"
+                                    : ""
+                            }`}
                             dangerouslySetInnerHTML={{
                                 __html: getHighlightedText(item.name, query),
                             }}

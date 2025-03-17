@@ -1,10 +1,13 @@
 import BlogSnippet from '../../../../components/blogSnippet';
 import { createClient } from '../../../../utils/supabase/server'
+import { supabase as clientSupabase } from '../../../../utils/supabase/client';
 import { mapTypeToRevenue } from '../../../../utils/textUtils';
 import Link from 'next/link';
 import { Button } from "flowbite-react";
 import { CiShare1 } from "react-icons/ci";
 
+export const dynamicParams = false;
+export const revalidate = 60;
 
 export async function generateMetadata({ params }, parent) {
 
@@ -24,6 +27,18 @@ export async function generateMetadata({ params }, parent) {
         description: `Erfahre mehr über die Funktionen und Erfahrungen mit ${software.name}. Alle wichtigen Features im Überblick – jetzt entdecken!`
     }
 }
+
+
+export async function generateStaticParams() {
+    
+    const { data } = await clientSupabase
+      .from('software')
+      .select('slug');
+  
+    return data.map((software) => ({
+      slug: software.slug,
+    }));
+  }
 
 
 export default async function Software({ params }) {

@@ -4,6 +4,13 @@ import CategoryListItem from '../../components/categoryListItem';
 import Link from 'next/link';
 import SoftwareHero from '../../components/softwareHero';
 
+export async function generateMetadata({ params }, parent) {
+
+    return {
+        title: `Die besten E-Commerce-Tools für mehr Wachstum – Finde die passende Software | Ecomthek`,
+        description: `Entdecke die besten E-Commerce-Softwares für Shopsysteme, E-Mail-Marketing, Kundenservice und mehr. Finde die passende Lösung für dein Business – mit Experten-Bewertungen und hilfreichen Funktionen.`
+    }
+}
 
 export default async function Softwares() {
 
@@ -12,12 +19,12 @@ export default async function Softwares() {
 
     const mainCategories = [
         { id: 45, name: 'Shopsysteme', slug: 'shopsysteme' },
-        { id: 1, name: 'E-Mail Marketing', slug: 'email-marketing' },
-        { id: 46, name: 'Kundenservice' },
-        { id: 47, name: 'Rechnungs- und Buchhaltungssysteme' },
-        { id: 48, name: 'Bewertungen & Trust' },
-        { id: 49, name: 'Umfragen' },
-        { id: 50, name: 'Versand' }
+        { id: 1, name: 'E-Mail Marketing Software', slug: 'email-marketing' },
+        { id: 46, name: 'Kundenservice Software', slug: 'kundenservice' },
+        { id: 47, name: 'Rechnungs- und Buchhaltungssysteme', slug: 'rechnungs-und-buchhaltungssysteme' },
+        { id: 48, name: 'Bewertungs- und Trust Software', slug: 'bewertungen-und-trust' },
+        { id: 49, name: 'Umfragen Software', slug: 'umfragen-und-kundenfeedback' },
+        { id: 50, name: 'Fulfillment & Versandsoftware', slug: 'versand-und-fulfillment' }
     ];
 
     const results = await Promise.all(mainCategories.map(async ({ id, name, slug }) => {
@@ -241,7 +248,7 @@ export default async function Softwares() {
 
                         <div className="mb-4">
                             <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                                Top {category.name} Software
+                                Top {category.name}
                             </h2>
                             <Link href={`/software/kategorie/${category.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Alle ansehen</Link>
                         </div>
