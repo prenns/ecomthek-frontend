@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { markdownToHtml } from '../../../../lib/api/utils/textUtils';
+import { markdownToHtml } from '../../../../lib/utils/textUtils';
 import SoftwareCategoryListItem from '../../../../components/softwareCategoryListItem';
 import { getCategoryBySlug, getAllCategorySlugs } from '../../../../lib/api/software-categories';
 

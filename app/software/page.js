@@ -1,8 +1,9 @@
-import { createClient } from '../../lib/api/utils/supabase/server';
+import Link from 'next/link';
 import SoftwareCard from '../../components/softwareCard';
 import CategoryListItem from '../../components/categoryListItem';
-import Link from 'next/link';
 import SoftwareHero from '../../components/softwareHero';
+import { getSoftwareByCategoryId, searchSoftware } from '../../lib/api/software';
+import { getAllCategories } from '../../lib/api/software-categories';
 
 export async function generateMetadata({ params }, parent) {
 
@@ -12,10 +13,13 @@ export async function generateMetadata({ params }, parent) {
     }
 }
 
-export default async function Softwares() {
+async function searchSoftwareSever(searchTerm) {
+    "use server";
+    return searchSoftware(searchTerm);
+}
 
-    const supabase = await createClient();
-    const { data: categories } = await supabase.from("software_category").select();
+export default async function Softwares() {
+    const categories = await getAllCategories();
 
     const mainCategories = [
         { id: 45, name: 'Shopsysteme', slug: 'shopsysteme' },
@@ -28,17 +32,8 @@ export default async function Softwares() {
     ];
 
     const results = await Promise.all(mainCategories.map(async ({ id, name, slug }) => {
-        let { data } = await supabase
-            .from("software")
-            .select(`
-            *,
-            problems(name, id, slug),
-            expert_software_rating!left(*)
-          `)
-            .eq('software_category_id', id)
-            .order('overall_score', { referencedTable: 'expert_software_rating', ascending: true })
-            .limit(4);
-
+        
+        let data = await getSoftwareByCategoryId(id);
         data = data || [];
 
         return { category: { id, name, slug }, data };
@@ -49,7 +44,7 @@ export default async function Softwares() {
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="mt-10">
-                    <SoftwareHero />
+                    <SoftwareHero searchSoftware={searchSoftwareSever} />
                 </div>
                 {/*       <section className="bg-white dark:bg-gray-900">
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16">

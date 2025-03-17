@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Button } from "flowbite-react";
 import { CiShare1 } from "react-icons/ci";
-import { mapTypeToRevenue } from '../../../../lib/api/utils/textUtils';
+import { mapTypeToRevenue } from '../../../../lib/utils/textUtils';
 import { getSoftwareBySlug, getAllSoftwareSlugs, getRelatedSoftware } from '../../../../lib/api/software';
 
 export const dynamicParams = false;

@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import SearchBar from './searchbar';
 
-const SoftwareHero = () => {
+const SoftwareHero = ({searchSoftware}) => {
 
     const typedElement = useRef(null);
 
@@ -40,7 +40,7 @@ const SoftwareHero = () => {
                             Finde die passenden Tools für dein E-Commerce Business. Vergleiche Software, entdecke Expertenbewertungen und wähle die perfekte Lösung – einfach & effizient
                         </p>
                         <div className="mx-auto max-w-3xl">
-                            <SearchBar />
+                            <SearchBar searchSoftware={searchSoftware} />
                         </div>
 
                     </div>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { mapTypeToRevenue } from '../lib/api/utils/textUtils';
+import { mapTypeToRevenue } from '../lib/utils/textUtils';
 import { Button } from "flowbite-react";
 import { CiShare1 } from "react-icons/ci";
 
