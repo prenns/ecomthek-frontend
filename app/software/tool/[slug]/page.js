@@ -1,26 +1,16 @@
-import BlogSnippet from '../../../../components/blogSnippet';
-import { createClient } from '../../../../utils/supabase/server'
-import { supabase as clientSupabase } from '../../../../utils/supabase/client';
-import { mapTypeToRevenue } from '../../../../utils/textUtils';
+
 import Link from 'next/link';
 import { Button } from "flowbite-react";
 import { CiShare1 } from "react-icons/ci";
+import { mapTypeToRevenue } from '../../../../lib/api/utils/textUtils';
+import { getSoftwareBySlug, getAllSoftwareSlugs, getRelatedSoftware } from '../../../../lib/api/software';
 
 export const dynamicParams = false;
 export const revalidate = 60;
 
 export async function generateMetadata({ params }, parent) {
 
-    const supabase = await createClient();
-    const { data: software } = await supabase.from("software").select(`
-        *, 
-        software_suitability(id, type),
-        problems(name, id, slug),
-        software_feature(*),
-        software_procons(*),
-        software_category(*),
-        expert_software_rating(*)
-        `).eq('slug', params.slug).limit(1).single();
+    const software = await getSoftwareBySlug(params.slug);
 
     return {
         title: `${software.name} – Efahrungen und Features` + ' | Ecomthek',
@@ -28,42 +18,20 @@ export async function generateMetadata({ params }, parent) {
     }
 }
 
-
 export async function generateStaticParams() {
-    
-    const { data } = await clientSupabase
-      .from('software')
-      .select('slug');
-  
+
+    const data = await getAllSoftwareSlugs();
+
     return data.map((software) => ({
-      slug: software.slug,
+        slug: software.slug,
     }));
-  }
+}
 
 
 export default async function Software({ params }) {
 
-    const supabase = await createClient();
-    const { data: software } = await supabase.from("software").select(`
-        *, 
-        software_suitability(id, type),
-        problems(name, id, slug),
-        software_feature(*),
-        software_procons(*),
-        software_category(*),
-        expert_software_rating(*)
-        `).eq('slug', params.slug).limit(1).single();
-
-    const { data: relatedSoftware } = await supabase
-        .from("software")
-        .select(`
-          *,
-          software_category(*),
-          expert_software_rating(*)
-        `)
-        .eq('software_category_id', software.software_category_id) // Gleiche Kategorie
-        .neq('id', software.id) // Aktuelle Software ausschließen
-        .limit(5);
+    const software = await getSoftwareBySlug(params.slug);
+    const relatedSoftware = await getRelatedSoftware(software);
 
     let proCons = null;
     let plusIcon = (<svg className="w-6 h-6 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

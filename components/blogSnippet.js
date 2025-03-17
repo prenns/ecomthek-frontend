@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import BlogListItem from './blogListItem';
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedPostsData } from '../lib/api/posts';
 
 export default async function BlogSnippet({title, description}) {
 

@@ -1,4 +1,4 @@
-import { createClient } from '../../utils/supabase/server';
+import { createClient } from '../../lib/api/utils/supabase/server';
 import SoftwareCard from '../../components/softwareCard';
 import CategoryListItem from '../../components/categoryListItem';
 import Link from 'next/link';

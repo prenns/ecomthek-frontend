@@ -1,56 +1,33 @@
 import Link from 'next/link';
-import { createClient } from '../../../../utils/supabase/server'
+import { markdownToHtml } from '../../../../lib/api/utils/textUtils';
 import SoftwareCategoryListItem from '../../../../components/softwareCategoryListItem';
-import { markdownToHtml } from '../../../../utils/textUtils';
-import { supabase as clientSupabase } from '../../../../utils/supabase/client';
-
+import { getCategoryBySlug, getAllCategorySlugs } from '../../../../lib/api/software-categories';
 
 export const dynamicParams = false;
 export const revalidate = 60;
 
 export async function generateMetadata({ params }, parent) {
 
-    const supabase = await createClient();
-    const { data: category } = await supabase.from("software_category").select(`
-        id,
-        name,
-        slug,
-        description,
-        seo_description,
-        software ( *, software_suitability (id, type), expert_software_rating(*) )
-      `).eq('slug', params.slug).limit(1).single();
-    
- 
-  return {
-    title: `Die besten ${category.name} im Vergleich 2025` + ' | Ecomthek',
-    description: `Erfahre mehr über die besten ${category.name} Tools 2025 für deinen Onlineshop. Alle wichtigen Features im Überblick – jetzt entdecken!`
-  }
+    const category = await getCategoryBySlug(params.slug);
+    return {
+        title: `${category.seo_title} 2025` + ' | Ecomthek',
+        description: `${category.seo_meta_description}`
+    }
 }
 
 export async function generateStaticParams() {
-    
-    const { data } = await clientSupabase
-      .from('software_category')
-      .select('slug');
-  
+
+    const data = await getAllCategorySlugs();
+
     return data.map((category) => ({
-      slug: category.slug,
+        slug: category.slug,
     }));
-  }
+}
 
 
 export default async function Category({ params }) {
 
-    const supabase = await createClient();
-    const { data: category } = await supabase.from("software_category").select(`
-        id,
-        name,
-        slug,
-        description,
-        seo_description,
-        software ( *, software_suitability (id, type), expert_software_rating(*), problems(name, id, slug), software_feature(*) )
-      `).eq('slug', params.slug).limit(1).single();
-    
+    const category = await getCategoryBySlug(params.slug);
 
     return (
         <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-12">
@@ -231,9 +208,9 @@ export default async function Category({ params }) {
                 </div>
                 {/* Mobile Drawer */}
 
-                <div className="max-w-none mt-16 mx-auto format lg:format-lg" dangerouslySetInnerHTML={{ __html: await markdownToHtml(category.seo_description)}} />
+                <div className="max-w-none mt-16 mx-auto format" dangerouslySetInnerHTML={{ __html: await markdownToHtml(category.seo_description) }} />
             </div>
-           
+
         </section>
 
     );

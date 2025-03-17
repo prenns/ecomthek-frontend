@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from "react";
-import { searchSoftware } from "../utils/supabase/api";
+import { searchSoftware } from "../lib/api/utils/supabase/api";
 import { useRouter } from 'next/navigation'
 
 const SearchBar = () => {

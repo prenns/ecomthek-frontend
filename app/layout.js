@@ -1,7 +1,7 @@
 import '../styles/global.css'
 import 'flowbite';
 import Link from 'next/link';
-import { categories, getCategoryBySlug } from '../lib/posts';
+import { categories, getCategoryBySlug } from '../lib/api/posts';
 import Script from 'next/script'
 
 export default function RootLayout({ children }) {
