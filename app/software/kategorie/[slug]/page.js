@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { markdownToHtml } from '../../../../lib/utils/textUtils';
 import SoftwareCategoryListItem from '../../../../components/softwareCategoryListItem';
 import { getCategoryBySlug, getAllCategorySlugs } from '../../../../lib/api/software-categories';
+import { getSoftwareByCategory } from '../../../../lib/api/software';
 
 export const dynamicParams = false;
 export const revalidate = 60;
@@ -28,6 +29,7 @@ export async function generateStaticParams() {
 export default async function Category({ params }) {
 
     const category = await getCategoryBySlug(params.slug);
+    const softwares = await getSoftwareByCategory(category);
 
     return (
         <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-12">
@@ -100,7 +102,7 @@ export default async function Category({ params }) {
                         <div className="grid gap-4">
 
 
-                            {category.software.map(softwareItem => {
+                            {softwares.map(softwareItem => {
                                 return <SoftwareCategoryListItem key={softwareItem.id} software={softwareItem} />
                             })}
 
