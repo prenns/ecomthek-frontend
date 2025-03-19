@@ -177,7 +177,7 @@ export default function RootLayout({ children }) {
                                     </li>
                                     <li className="mb-4">
                                         <Link
-                                            href={`/software/kategorie/shopsysteme`}
+                                            href={`/software/kategorie/email-marketing`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
                                             E-Mail Marketing Software
@@ -209,7 +209,6 @@ export default function RootLayout({ children }) {
                                         >
                                            Fulfillment & Versandsoftware
                                         </Link>
-                                       
                                     </li>
                                 </ul>
                             </div>

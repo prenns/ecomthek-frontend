@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from "flowbite-react";
 import { CiShare1 } from "react-icons/ci";
 import { mapTypeToRevenue } from '../../../../lib/utils/textUtils';
-import { getSoftwareBySlug, getAllSoftwareSlugs, getRelatedSoftware } from '../../../../lib/api/software';
+import { getSoftwareBySlug, getAllSoftwareSlugs, getRelatedSoftware, getSupportedShopSystemsForSoftware } from '../../../../lib/api/software';
 
 export const dynamicParams = false;
 export const revalidate = 60;
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }, parent) {
     const software = await getSoftwareBySlug(params.slug);
 
     return {
-        title: `${software.name} – Efahrungen und Features` + ' | Ecomthek',
+        title: `${software.name} – Erfahrungen und Features` + ' | Ecomthek',
         description: `Erfahre mehr über die Funktionen und Erfahrungen mit ${software.name}. Alle wichtigen Features im Überblick – jetzt entdecken!`
     }
 }
@@ -32,6 +32,7 @@ export default async function Software({ params }) {
 
     const software = await getSoftwareBySlug(params.slug);
     const relatedSoftware = await getRelatedSoftware(software);
+    const supportedShops = await getSupportedShopSystemsForSoftware(software);
 
     let proCons = null;
     let plusIcon = (<svg className="w-6 h-6 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -469,7 +470,7 @@ export default async function Software({ params }) {
                                     >
                                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                     </svg>
-                                    {problem.name}
+                                    {problem.solution}
                                 </li>
                             );
                         })}
@@ -663,10 +664,67 @@ export default async function Software({ params }) {
                 <div className="md:w-1/4 w-full bg-white rounded-lg ">
                     <div className="mb-8 max-w p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
 
-                        <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                             Vorteile & Nachteile
                         </h5>
                         {proCons}
+                    </div>
+                    <div className="max-w mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <h5 className="mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                            Integrationen mit
+                        </h5>
+                        <ul className="space-y-3">
+                            {supportedShops.map(supportedShop => {
+
+                                let shopClassName= "text-gray-700 font-medium";
+                                let icon = (<svg
+                                    className="w-6 h-6 text-green-500"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>);
+
+                                if(supportedShop.integration_type == 'none') {
+                                    shopClassName= "text-gray-300 font-medium";
+                                    icon = (  <svg
+                                        className="w-6 h-6 text-red-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>);
+                                }
+
+                                return (
+                                    <li key={supportedShop.id} className="flex items-center justify-between">
+                                        <div className="flex items-center space-x-3">
+                                         
+                                            <img
+                                                src={supportedShop.logo}
+                                                alt={supportedShop.name + ' Logo'}
+                                                className="w-8 h-8 object-contain"
+                                            />
+                                            <span className={shopClassName}>{supportedShop.name}</span>
+                                        </div>
+
+                                       {icon}
+
+                                    </li>
+                                );
+                            })}
+
+                        </ul>
                     </div>
                     <div className="max-w mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -680,7 +738,6 @@ export default async function Software({ params }) {
                                     </span></div>);
                         })}
                     </div>
-
 
                     <div className="max-w p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 dark:bg-gray-800 dark:border-gray-700">
                         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -696,7 +753,7 @@ export default async function Software({ params }) {
                                             className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
                                         >
                                             <img
-                                                className="w-6 h-6 object-contain"
+                                                className="w-8 h-8 object-contain"
                                                 src={relatedSoftwareItem.logo_url}
                                                 alt={`${relatedSoftwareItem.name} Logo`}
                                             />
