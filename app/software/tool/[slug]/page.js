@@ -73,6 +73,71 @@ export default async function Software({ params }) {
     let expertRatingBox = null;
     let scoreSnippet = null;
     let expertRatingTab = null;
+    let integrationBox = null;
+
+    //dont show shop integrations on shops themselfs
+    if (software.software_category.name !== 'Shopsysteme') {
+        integrationBox = (
+            <div className="max-w mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <h5 className="mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    Integrationen mit
+                </h5>
+                <ul className="space-y-3">
+                    {supportedShops.map(supportedShop => {
+
+                        let shopClassName = "text-gray-700 font-medium";
+                        let icon = (<svg
+                            className="w-6 h-6 text-green-500"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>);
+
+                        if (supportedShop.integration_type == 'none') {
+                            shopClassName = "text-gray-300 font-medium";
+                            icon = (<svg
+                                className="w-6 h-6 text-red-500"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>);
+                        }
+
+                        return (
+                            <li key={supportedShop.id} className="flex items-center justify-between">
+                                <div className="flex items-center space-x-3">
+
+                                    <img
+                                        src={supportedShop.logo}
+                                        alt={supportedShop.name + ' Logo'}
+                                        className="w-8 h-8 object-contain"
+                                    />
+                                    <span className={shopClassName}>{supportedShop.name}</span>
+                                </div>
+
+                                {icon}
+
+                            </li>
+                        );
+                    })}
+
+                </ul>
+            </div>
+        );
+    }
+
 
     if (software.expert_software_rating.length > 0) {
         expertRating = software.expert_software_rating[0];
@@ -669,63 +734,10 @@ export default async function Software({ params }) {
                         </h5>
                         {proCons}
                     </div>
-                    <div className="max-w mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                        <h5 className="mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                            Integrationen mit
-                        </h5>
-                        <ul className="space-y-3">
-                            {supportedShops.map(supportedShop => {
 
-                                let shopClassName= "text-gray-700 font-medium";
-                                let icon = (<svg
-                                    className="w-6 h-6 text-green-500"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                </svg>);
 
-                                if(supportedShop.integration_type == 'none') {
-                                    shopClassName= "text-gray-300 font-medium";
-                                    icon = (  <svg
-                                        className="w-6 h-6 text-red-500"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    </svg>);
-                                }
+                    {integrationBox}
 
-                                return (
-                                    <li key={supportedShop.id} className="flex items-center justify-between">
-                                        <div className="flex items-center space-x-3">
-                                         
-                                            <img
-                                                src={supportedShop.logo}
-                                                alt={supportedShop.name + ' Logo'}
-                                                className="w-8 h-8 object-contain"
-                                            />
-                                            <span className={shopClassName}>{supportedShop.name}</span>
-                                        </div>
-
-                                       {icon}
-
-                                    </li>
-                                );
-                            })}
-
-                        </ul>
-                    </div>
                     <div className="max-w mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                             Geeignet für Shops
