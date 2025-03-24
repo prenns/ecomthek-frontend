@@ -100,7 +100,7 @@ export default async function Home() {
                             </Link>
 
                             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Wir nehmen dein Business unter die Lupe und erstellen einen individuellen Handlungsplan, damit du auf das nächste Level skalieren kannst.
+                                Wir nehmen deinen Onlineshop unter die Lupe und erstellen einen individuellen Handlungsplan, damit du auf das nächste Level skalieren kannst.
                             </p>
                             <Link
                                 href="/audit"

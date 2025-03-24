@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { markdownToHtml } from '../../../../lib/utils/textUtils';
 import SoftwareCategoryListItem from '../../../../components/softwareCategoryListItem';
-import { getCategoryBySlug, getAllCategorySlugs } from '../../../../lib/api/software-categories';
+import CategoryShopListItem from '../../../../components/categoryShopListItem';
+import { getCategoryBySlug, getAllCategorySlugs, getCategoryShopsystemsForCategory } from '../../../../lib/api/software-categories';
 import { getSoftwareByCategory } from '../../../../lib/api/software';
 
 export const dynamicParams = false;
@@ -30,6 +31,7 @@ export default async function Category({ params }) {
 
     const category = await getCategoryBySlug(params.slug);
     const softwares = await getSoftwareByCategory(category);
+    const categoryShopsystems = await getCategoryShopsystemsForCategory(category);
 
     return (
         <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-12">
@@ -87,6 +89,13 @@ export default async function Category({ params }) {
                         <p className="mb-3 mt-6 font-normal text-gray-500 dark:text-gray-400">{category.description}</p>
                     </div>
 
+               
+
+                </div>
+                <div className="mb-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {categoryShopsystems.map(shopSystem => {
+                        return <CategoryShopListItem key={shopSystem.software.id} category={category} shopSystem={shopSystem} />
+                    })}
                 </div>
                 <div className="gap-6 lg:flex">
                     {/* Sidenav */}

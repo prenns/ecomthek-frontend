@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Button } from "flowbite-react";
+import { Button, Tooltip } from "flowbite-react";
 import { CiShare1 } from "react-icons/ci";
 import { mapTypeToRevenue } from '../../../../lib/utils/textUtils';
 import { getSoftwareBySlug, getAllSoftwareSlugs, getRelatedSoftware, getSupportedShopSystemsForSoftware } from '../../../../lib/api/software';
@@ -62,6 +62,10 @@ export default async function Software({ params }) {
 
     });
 
+    const isSuitable = (suitability, toCheck) => {
+        return suitability.type === toCheck;
+    }
+
     const convertToPercentage = (score) => {
         // Clamping auf Werte zwischen 0 und 10, um Fehleingaben zu verhindern
         const clampedScore = Math.max(0, Math.min(10, score));
@@ -74,49 +78,50 @@ export default async function Software({ params }) {
     let scoreSnippet = null;
     let expertRatingTab = null;
     let integrationBox = null;
+    let integrationTable = null;
 
     //dont show shop integrations on shops themselfs
     if (software.software_category.name !== 'Shopsysteme') {
         integrationBox = (
             <div className="max-w mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 <h5 className="mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                    Integrationen mit
+                    Integration mit
                 </h5>
                 <ul className="space-y-3">
                     {supportedShops.map(supportedShop => {
 
+                        let tooltipText = "Native Integration";
                         let shopClassName = "text-gray-700 font-medium";
-                        let icon = (<svg
-                            className="w-6 h-6 text-green-500"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>);
+                        let icon = (
+
+                            <svg className="w-6 h-6 text-green-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" />
+                            </svg>
+
+                        );
+
+                        if (supportedShop.integration_type == 'middleware' || supportedShop.integration_type == 'custom') {
+                            tooltipText = "Integration nur über Middleware oder API";
+                            icon = (
+                                <svg className="w-6 h-6 text-yellow-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0V8Zm-1 7a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z" clip-rule="evenodd" />
+                                </svg>
+                            );
+                        }
 
                         if (supportedShop.integration_type == 'none') {
                             shopClassName = "text-gray-300 font-medium";
-                            icon = (<svg
-                                className="w-6 h-6 text-red-500"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>);
+                            tooltipText = "Keine direkte Integration"
+                            icon = (<svg className="w-6 h-6 text-red-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z" clip-rule="evenodd" />
+                            </svg>
+                            );
                         }
 
                         return (
-                            <li key={supportedShop.id} className="flex items-center justify-between">
+
+                            <li key={supportedShop.id} className="flex items-center justify-between" >
+
                                 <div className="flex items-center space-x-3">
 
                                     <img
@@ -124,18 +129,92 @@ export default async function Software({ params }) {
                                         alt={supportedShop.name + ' Logo'}
                                         className="w-8 h-8 object-contain"
                                     />
+
                                     <span className={shopClassName}>{supportedShop.name}</span>
+
                                 </div>
+                                <Tooltip content={tooltipText}>
+                                    {icon}
 
-                                {icon}
-
+                                </Tooltip>
                             </li>
                         );
                     })}
-
                 </ul>
             </div>
         );
+
+        integrationTable = (
+            <div>
+                <h1 className="mt-8 mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Mit welchen Shopsystemen ist {software.name} kompatibel?</h1>
+                <div className="w-full overflow-x-auto">
+                    <div className="overflow-hidden min-w-max">
+                        <div className="grid grid-cols-2 p-4 text-sm font-medium text-gray-900 bg-gray-100 border-t border-b border-gray-200 gap-x-16 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+                            <div className="flex items-center">Shopsystem</div>
+                            <div>Integration</div>
+                        </div>
+
+                        {supportedShops.map(supportedShop => {
+
+                            let tooltipText = "Native Integration";
+                            let shopClassName = "text-gray-700 font-medium";
+                            let icon = (
+
+                                <svg className="w-6 h-6 text-green-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" />
+                                </svg>
+
+                            );
+
+                            if (supportedShop.integration_type == 'middleware' || supportedShop.integration_type == 'custom') {
+                                tooltipText = "Integration nur über Middleware oder API";
+                                icon = (
+                                    <svg className="w-6 h-6 text-yellow-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0V8Zm-1 7a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z" clip-rule="evenodd" />
+                                    </svg>
+                                );
+                            }
+
+                            if (supportedShop.integration_type == 'none') {
+                                shopClassName = "text-gray-300 font-medium";
+                                tooltipText = "Keine direkte Integration"
+                                icon = (<svg className="w-6 h-6 text-red-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z" clip-rule="evenodd" />
+                                </svg>
+                                );
+                            }
+
+                            return (
+
+                                <div key={supportedShop.id} className="grid grid-cols-2 px-4 py-5 text-sm text-gray-700 border-b border-gray-200 gap-x-16 dark:border-gray-700">
+                                    <div className="text-gray-500 dark:text-gray-400">
+                                        <div className="flex items-center space-x-3">
+
+                                            <img
+                                                src={supportedShop.logo}
+                                                alt={supportedShop.name + ' Logo'}
+                                                className="w-8 h-8 object-contain"
+                                            />
+
+                                            <span className={shopClassName}>{supportedShop.name}</span>
+
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center">
+                                        {icon}
+                                        <span className="ml-4">{tooltipText}</span>
+                                    </div>
+                                </div>
+
+
+                            );
+                        })}
+
+                    </div>
+                </div>
+            </div>
+        );
+
     }
 
 
@@ -575,12 +654,21 @@ export default async function Software({ params }) {
                     <h1 className="mt-8 mb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Für wen ist {software.name} geeignet?</h1>
 
                     <div class="mb-4">
-                        {software.software_suitability.map(suitability => {
-                            return (
+                        {software.software_suitability.map(suitabilityWrapper => {
+                            let suitability = suitabilityWrapper.software_suitability;
+                            let entry = (<span key={suitability.id} className="bg-blue-100 text-blue-800 inline-flex items-center text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
+                                <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
 
-                                <span key={suitability.id} className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
-                                    {mapTypeToRevenue(suitability.type)}
-                                </span>);
+                                {mapTypeToRevenue(suitability.type)}
+                            </span>);
+
+                            if (!suitabilityWrapper.is_suitable) {
+                                entry = null;
+                            }
+
+                            return entry;
                         })}
                     </div>
 
@@ -589,6 +677,49 @@ export default async function Software({ params }) {
                     </p>
 
 
+                    <div className="w-full overflow-x-auto">
+                        <div className="overflow-hidden min-w-max">
+                            <div className="grid grid-cols-2 p-4 text-sm font-medium text-gray-900 bg-gray-100 border-t border-b border-gray-200 gap-x-16 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+                                <div className="flex items-center">Jahresumsatz</div>
+                                <div>Geeignet</div>
+                            </div>
+
+
+                            {software.software_suitability.map(suitabilityWrapper => {
+
+                                let suitability = suitabilityWrapper.software_suitability;
+
+                                let icon = (<svg className="w-6 h-6 text-green-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" />
+                                </svg>);
+
+                                if (!suitabilityWrapper.is_suitable) {
+                                    icon = (<svg className="w-6 h-6 text-red-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z" clip-rule="evenodd" />
+                                    </svg>
+                                    );
+                                }
+
+                                return (
+                                    <div key={suitability.id} className="grid grid-cols-2 px-4 py-5 text-sm text-gray-700 border-b border-gray-200 gap-x-16 dark:border-gray-700">
+                                        <div className="text-gray-500 dark:text-gray-400">
+                                            {mapTypeToRevenue(suitability.type)}
+                                        </div>
+                                        <div>
+                                            <div className="flex items-center">
+                                                {icon}
+                                                <span className="ml-4">{suitabilityWrapper.description}</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                );
+                            })}
+
+                        </div>
+                    </div>
+
+                    {integrationTable}
 
                     {/*<div id="default-carousel" className="mt-8 relative w-full" data-carousel="slide">
            
@@ -742,12 +873,19 @@ export default async function Software({ params }) {
                         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                             Geeignet für Shops
                         </h5>
-                        {software.software_suitability.map(suitability => {
-                            return (
-                                <div>
-                                    <span key={suitability.id} className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
-                                        {mapTypeToRevenue(suitability.type)}
-                                    </span></div>);
+                        {software.software_suitability.map(suitabilityWrapper => {
+                            let suitability = suitabilityWrapper.software_suitability;
+                            let entry = (<span key={suitability.id} className="bg-blue-100 text-blue-800 inline-flex items-center text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
+                                <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+
+                                {mapTypeToRevenue(suitability.type)}
+                            </span>);
+                            if(!suitabilityWrapper.is_suitable) {
+                                entry = null;
+                            }
+                            return entry;
                         })}
                     </div>
 

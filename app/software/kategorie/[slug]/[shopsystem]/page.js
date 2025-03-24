@@ -10,9 +10,11 @@ export const revalidate = 60;
 export async function generateMetadata({ params }, parent) {
 
     const category = await getCategoryBySlug(params.slug);
+    const shopSystem = await getSoftwareBySlug(params.shopsystem);
+    const categoryShopSystem = await getCategoryShopsystem(category, shopSystem);
     return {
-        title: `${category.seo_title} 2025` + ' | Ecomthek',
-        description: `${category.seo_meta_description}`
+        title: `${categoryShopSystem.seo_title} 2025` + ' | Ecomthek',
+        description: `${categoryShopSystem.seo_meta_description}`
     }
 }
 
@@ -87,7 +89,7 @@ export default async function CategoryForShopsystem({ params }) {
                         <h2 className="mt-6 text-3xl font-semibold text-gray-900 dark:text-white">
                             {categoryShopSystem.title}
                         </h2>
-                        <p className="mb-3 mt-6 font-normal text-gray-500 dark:text-gray-400">{category.description}</p>
+                        <p className="mb-3 mt-6 font-normal text-gray-500 dark:text-gray-400">{categoryShopSystem.description}</p>
                     </div>
 
                 </div>
@@ -213,7 +215,7 @@ export default async function CategoryForShopsystem({ params }) {
                 </div>
                 {/* Mobile Drawer */}
 
-                <div className="max-w-none mt-16 mx-auto format" dangerouslySetInnerHTML={{ __html: await markdownToHtml(category.seo_description) }} />
+                <div className="max-w-none mt-16 mx-auto format" dangerouslySetInnerHTML={{ __html: await markdownToHtml(categoryShopSystem.seo_description) }} />
             </div>
 
         </section>
