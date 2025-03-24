@@ -1,4 +1,4 @@
-import { getSortedPostsByCategory, categories } from '../../../lib/posts';
+import { getSortedPostsByCategory, categories } from '../../../lib/api/posts';
 import BlogListItem from '../../../components/blogListItem';
 
 export async function generateStaticParams() {
