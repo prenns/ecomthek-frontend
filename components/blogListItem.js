@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getCategoryBySlug } from '../lib/posts';
+import { getCategoryBySlug } from '../lib/api/posts';
 
 export default function BlogListItem({ id, title, date, summary, author, readTime, category }) {
 
