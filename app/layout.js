@@ -1,7 +1,6 @@
-import '../styles/global.css'
 import 'flowbite';
 import Link from 'next/link';
-import { categories, getCategoryBySlug } from '../lib/api/posts';
+import '../styles/global.css';
 import Script from 'next/script'
 
 export default function RootLayout({ children }) {
@@ -55,10 +54,13 @@ export default function RootLayout({ children }) {
                                         <Link href="/software" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Software</Link>
                                     </li>
                                     <li>
-                                        <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Notion Marketing Template</Link>
+                                        <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Templates</Link>
                                     </li>
                                     <li>
                                         <Link href="/audit" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Shop Audit</Link>
+                                    </li>
+                                     <li>
+                                        <Link href="/blog" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Blog</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -116,18 +118,22 @@ export default function RootLayout({ children }) {
                                     Themen
                                 </h2>
                                 <ul className="text-gray-500 dark:text-gray-400">
-                                    {Object.keys(categories).map(categoryKey => {
-                                        return (
-                                            <li className="mb-4">
-                                                <Link
-                                                    href={`/kategorien/${categoryKey}`}
-                                                    className="hover:underline hover:text-gray-900 dark:hover:text-white"
-                                                >
-                                                    {getCategoryBySlug(categoryKey).name}
-                                                </Link>
-                                            </li>
-                                        )
-                                    })}
+                                    <li className="mb-4">
+                                        <Link
+                                            href={`/kategorien/shop-und-conversion`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                            Shop und Conversion
+                                        </Link>
+                                    </li>
+                                     <li className="mb-4">
+                                        <Link
+                                            href={`/kategorien/team-und-systeme`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                            Team und Systeme
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                             <div>
@@ -140,7 +146,7 @@ export default function RootLayout({ children }) {
                                             href={`/notion-templates/marketing-calendar`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                        Marketing Template
+                                            Marketing Template
                                         </Link>
                                     </li>
                                 </ul>
@@ -155,9 +161,9 @@ export default function RootLayout({ children }) {
                                             href={`/audit`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                           Shop Audit
+                                            Shop Audit
                                         </Link>
-                                       
+
                                     </li>
                                 </ul>
                             </div>
@@ -171,9 +177,9 @@ export default function RootLayout({ children }) {
                                             href={`/software/kategorie/shopsysteme`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                           Onlineshopsysteme
+                                            Onlineshopsysteme
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -182,7 +188,7 @@ export default function RootLayout({ children }) {
                                         >
                                             E-Mail Marketing Software
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -191,7 +197,7 @@ export default function RootLayout({ children }) {
                                         >
                                             Kundenservice Software
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -200,14 +206,14 @@ export default function RootLayout({ children }) {
                                         >
                                             Rechnungs- und Buchhaltungssysteme
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
                                             href={`/software/kategorie/versand-und-fulfillment`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                           Fulfillment & Versandsoftware
+                                            Fulfillment & Versandsoftware
                                         </Link>
                                     </li>
                                 </ul>

@@ -1,11 +1,9 @@
-
-import Link from 'next/link';
-import BlogListItem from './blogListItem';
-import { getSortedPostsData } from '../lib/api/posts';
+import BlogCard from './blogCard';
+import { getLatestPosts } from '../../lib/api/posts';
 
 export default async function BlogSnippet({title, description}) {
 
-    const allPostsData = await getSortedPostsData();
+    const latestPosts = await getLatestPosts(3);
 
     return (
 
@@ -19,15 +17,19 @@ export default async function BlogSnippet({title, description}) {
                         {description}
                     </p>
                 </div>
-                <div className="grid gap-8 lg:grid-cols-2">
+                {/* <div className="grid gap-8 lg:grid-cols-2">
                     {allPostsData.map(postData => {
                        return <BlogListItem key={postData.id} {...postData} />
+                    })}
+                </div> */}
+                <div className="grid gap-8 lg:grid-cols-2">
+                    {latestPosts.map(latestPost => {
+                       return <BlogCard key={latestPost.id} blogPost={latestPost} />
                     })}
                 </div>
             </div>
         </section>
     )
-
 }
 
 

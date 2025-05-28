@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { getCategoryBySlug } from '../lib/api/posts';
+import { getCategoryBySlug } from '../../lib/api/posts';
 
 export default function BlogListItem({ id, title, date, summary, author, readTime, category }) {
 
     const categoryObject = getCategoryBySlug(category);
+    
 
     return (
         <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
