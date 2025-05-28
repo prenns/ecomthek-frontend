@@ -1,10 +1,16 @@
-import '../styles/global.css'
 import 'flowbite';
+import '../styles/global.css'
 import Link from 'next/link';
-import { categories, getCategoryBySlug } from '../lib/api/posts';
 import Script from 'next/script'
+import { categories, getCategoryBySlug } from '../lib/api/posts';
+import { getAuthUser } from '../lib/api/auth';
+import { logoutUserAction } from './actions/authActions';
+import UserInfoHeader from '../components/userInfoHeader';
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+
+    const { data: { user } } = await getAuthUser();
+    
     return (
         <html lang="en">
 
@@ -39,6 +45,16 @@ export default function RootLayout({ children }) {
                                 <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">ECOMTHEK</span>
                             </Link>
                             <div className="flex items-center lg:order-2">
+                                {user ? (
+                                  <UserInfoHeader logoutSubmitAction={logoutUserAction} user={user} />
+                                ) : (
+                                    <Link
+                                        href="/login"
+                                        className="text-sm text-gray-700 hover:underline dark:text-white"
+                                    >
+                                        Login
+                                    </Link>
+                                )}
                                 <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                                     <span className="sr-only">Menü öffnen</span>
                                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
@@ -140,7 +156,7 @@ export default function RootLayout({ children }) {
                                             href={`/notion-templates/marketing-calendar`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                        Marketing Template
+                                            Marketing Template
                                         </Link>
                                     </li>
                                 </ul>
@@ -155,9 +171,9 @@ export default function RootLayout({ children }) {
                                             href={`/audit`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                           Shop Audit
+                                            Shop Audit
                                         </Link>
-                                       
+
                                     </li>
                                 </ul>
                             </div>
@@ -171,9 +187,9 @@ export default function RootLayout({ children }) {
                                             href={`/software/kategorie/shopsysteme`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                           Onlineshopsysteme
+                                            Onlineshopsysteme
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -182,7 +198,7 @@ export default function RootLayout({ children }) {
                                         >
                                             E-Mail Marketing Software
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -191,7 +207,7 @@ export default function RootLayout({ children }) {
                                         >
                                             Kundenservice Software
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -200,14 +216,14 @@ export default function RootLayout({ children }) {
                                         >
                                             Rechnungs- und Buchhaltungssysteme
                                         </Link>
-                                       
+
                                     </li>
                                     <li className="mb-4">
                                         <Link
                                             href={`/software/kategorie/versand-und-fulfillment`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
-                                           Fulfillment & Versandsoftware
+                                            Fulfillment & Versandsoftware
                                         </Link>
                                     </li>
                                 </ul>
