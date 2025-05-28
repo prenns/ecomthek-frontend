@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import BlogSnippet from '../components/blogSnippet';
+import BlogSnippet from '../components/blog/blogSnippet';
 import SearchBar from '../components/searchbar';
 import { searchSoftware } from '../lib/api/software';
 

@@ -4569,7 +4569,7 @@ export default function LandingAuditPage() {
 
                 <div className="w-full flex-1 flex flex-wrap grow justify-center gap-20">
                     <img width={300} className="h-auto max-w-full" src="/images/wunderklein-logo-audit.png" />
-                    <img width={250} className="h-auto max-w-full" src="/images/healkraut-logo-audit.png" />
+                    <img width={250} className="h-auto max-w-full" src="/images/daykroud-logo-audit.png" />
                 </div>
 
             </div>
