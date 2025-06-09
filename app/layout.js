@@ -2,7 +2,7 @@ import 'flowbite';
 import Link from 'next/link';
 import '../styles/global.css';
 import Script from 'next/script'
-
+import CookieSettingsLink from '../components/consent/cookieSettingsLink';
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
@@ -101,6 +101,9 @@ export default function RootLayout({ children }) {
                                         >
                                             Datenschutz
                                         </Link>
+                                    </li>
+                                    <li className="mb-4">
+                                      <CookieSettingsLink />
                                     </li>
                                     <li className="mb-4">
                                         <Link
