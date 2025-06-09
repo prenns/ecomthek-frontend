@@ -1265,7 +1265,7 @@ export default function LandingMarketingCalendar() {
                     <div className="flex p-6 text-center bg-gray-50 lg:p-8 dark:bg-gray-700">
                         <div className="self-center w-full">
                             <div className="text-5xl font-extrabold text-gray-900 dark:text-white">
-                                149€
+                                49€
                             </div>
                             <div className="mt-1 mb-4 text-gray-500 text-light dark:text-gray-400">
                                 exkl. MwSt.
