@@ -244,7 +244,7 @@ export default async function Software({ params }) {
         scoreSnippet = (
             <div className="flex items-center mb-5">
 
-                <p className="bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                <p className="bg-primary-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                     {expertRating.overall_score}/10
                 </p>
                 <p className="ms-2 font-medium text-gray-900 dark:text-white">Ecomthek Score</p>
@@ -262,7 +262,7 @@ export default async function Software({ params }) {
 
                         <>
                             <div className="flex items-center mb-5">
-                                <p className="bg-blue-100 text-blue-800 text-xl font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                                <p className="bg-primary-100 text-primary-800 text-xl font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                                     {expertRating.overall_score}/10
                                 </p>
                                 <p className="ms-2 font-medium text-gray-900 dark:text-white">Ecomthek Score</p>
@@ -277,7 +277,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center mb-3">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.functionality_score)}%` }}
                                                 />
                                             </div>
@@ -293,7 +293,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center mb-3">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.usability_score)}%` }}
                                                 />
                                             </div>
@@ -309,7 +309,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center mb-3">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.integrations_compatibility_score)}%` }}
                                                 />
                                             </div>
@@ -325,7 +325,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.value_for_money_score)}%` }}
                                                 />
                                             </div>
@@ -343,7 +343,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center mb-3">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.support_community_score)}%` }}
                                                 />
                                             </div>
@@ -359,7 +359,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center mb-3">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.performance_stability_score)}%` }}
                                                 />
                                             </div>
@@ -375,7 +375,7 @@ export default async function Software({ params }) {
                                         <dd className="flex items-center">
                                             <div className="w-full bg-gray-200 rounded-sm h-2.5 dark:bg-gray-700 me-2">
                                                 <div
-                                                    className="bg-blue-600 h-2.5 rounded-sm dark:bg-blue-500"
+                                                    className="bg-primary-600 h-2.5 rounded-sm dark:bg-blue-500"
                                                     style={{ width: `${convertToPercentage(expertRating.innovation_future_proof_score)}%` }}
                                                 />
                                             </div>
@@ -392,7 +392,7 @@ export default async function Software({ params }) {
                     </div>
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
 
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.functionality_score}/10
                         </p>
                         Funktionsumfang
@@ -401,14 +401,14 @@ export default async function Software({ params }) {
                     <p className="mb-8 font-normal text-gray-500 dark:text-gray-400">{expertRating.functionality_text}</p>
 
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.usability_score}/10
                         </p>
                         Benutzerfreundlichkeit</h2>
                     <p className="mb-8 font-normal text-gray-500 dark:text-gray-400">{expertRating.usability_text}</p>
 
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.integrations_compatibility_score}/10
                         </p>
                         Integrationen & Kompatibilität
@@ -416,7 +416,7 @@ export default async function Software({ params }) {
                     <p className="mb-8 font-normal text-gray-500 dark:text-gray-400">{expertRating.integrations_compatibility_text}</p>
 
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.value_for_money_score}/10
                         </p>
                         Preis-Leistungs-Verhältnis
@@ -424,7 +424,7 @@ export default async function Software({ params }) {
                     <p className="mb-8 font-normal text-gray-500 dark:text-gray-400">{expertRating.value_for_money_text}</p>
 
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.support_community_score}/10
                         </p>
                         Support & Community
@@ -432,7 +432,7 @@ export default async function Software({ params }) {
                     <p className="mb-8 font-normal text-gray-500 dark:text-gray-400">{expertRating.support_community_text}</p>
 
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.performance_stability_score}/10
                         </p>
                         Performance & Stabilität
@@ -440,7 +440,7 @@ export default async function Software({ params }) {
                     <p className="mb-8 font-normal text-gray-500 dark:text-gray-400">{expertRating.performance_stability_text}</p>
 
                     <h2 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <p className="mr-2 bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                        <p className="mr-2 bg-blue-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                             {expertRating.innovation_future_proof_score}/10
                         </p>
                         Innovationsgrad & Zukunftssicherheit
@@ -469,7 +469,7 @@ export default async function Software({ params }) {
                             <li className="inline-flex items-center">
                                 <Link
                                     href="/software"
-                                    className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+                                    className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white"
                                 >
                                     <svg
                                         className="w-3 h-3 me-2.5"
@@ -502,7 +502,7 @@ export default async function Software({ params }) {
                                     </svg>
                                     <Link
                                         href={`/software/kategorie/${software.software_category.slug}`}
-                                        className="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
+                                        className="ms-1 text-sm font-medium text-gray-700 hover:text-primary-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
                                     >
                                         {software.software_category.name}
                                     </Link>
@@ -551,7 +551,7 @@ export default async function Software({ params }) {
 
                                 </h1>
                                 {scoreSnippet}
-                                <Button className="focus:outline-none" target="_blank" size="lg" color="blue" as={Link} href={software.website_url}>
+                                <Button className="bg-primary-600 hover:bg-primary-700 focus:outline-none" target="_blank" size="lg" as={Link} href={software.website_url}>
                                     <CiShare1 className="mr-2 h-5 w-5" />
                                     {software.name} {software.cta_text}
                                 </Button>
@@ -565,11 +565,11 @@ export default async function Software({ params }) {
                                 <li className="me-2">
                                     <a
                                         href="#"
-                                        className="inline-flex items-center justify-center p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500 group"
+                                        className="inline-flex items-center justify-center p-4 text-primary-600 border-b-2 border-primary-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500 group"
                                         aria-current="page"
                                     >
                                         <svg
-                                            className="w-4 h-4 me-2 text-blue-600 dark:text-blue-500"
+                                            className="w-4 h-4 me-2 text-primary-600 dark:text-blue-500"
                                             aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="currentColor"
@@ -656,7 +656,7 @@ export default async function Software({ params }) {
                     <div class="mb-4">
                         {software.software_suitability.map(suitabilityWrapper => {
                             let suitability = suitabilityWrapper.software_suitability;
-                            let entry = (<span key={suitability.id} className="bg-blue-100 text-blue-800 inline-flex items-center text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
+                            let entry = (<span key={suitability.id} className="bg-primary-100 text-primary-800 inline-flex items-center text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
                                 <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
@@ -875,7 +875,7 @@ export default async function Software({ params }) {
                         </h5>
                         {software.software_suitability.map(suitabilityWrapper => {
                             let suitability = suitabilityWrapper.software_suitability;
-                            let entry = (<span key={suitability.id} className="bg-blue-100 text-blue-800 inline-flex items-center text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
+                            let entry = (<span key={suitability.id} className="bg-primary-100 text-primary-800 inline-flex items-center text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
                                 <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>

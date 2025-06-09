@@ -63,16 +63,16 @@ export default function SoftwareCategoryListItem({ software }) {
                 </div> */}
                 <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
                 {" "}
-                <Link href={`/software/tool/${software.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
+                <Link href={`/software/tool/${software.slug}`} className="font-medium text-primary-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
 
                 </p>
                 <Button
                     as={Link}
                     size="sm"
                     target="_blank"
-                    color="blue"
+                  
                     href={software.website_url}
-                    className="hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium"
+                    className="bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium"
                 >
                     <CiShare1 className="mr-2 h-5 w-5" />
                     {software.name} {software.cta_text}

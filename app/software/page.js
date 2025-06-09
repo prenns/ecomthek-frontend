@@ -245,7 +245,7 @@ export default async function Softwares() {
                             <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
                                 Top {category.name}
                             </h2>
-                            <Link href={`/software/kategorie/${category.slug}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Alle ansehen</Link>
+                            <Link href={`/software/kategorie/${category.slug}`} className="font-medium text-primary-600 dark:text-blue-500 hover:underline">Alle ansehen</Link>
                         </div>
 
                         <div className="grid gap-8 lg:grid-cols-4">

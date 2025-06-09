@@ -34,7 +34,7 @@ const SoftwareHero = ({searchSoftware}) => {
                             Finde die perfekte Software für
                         </h1>
                         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
-                        <span ref={typedElement} className="text-blue-600"></span>
+                        <span ref={typedElement} className="text-primary-600"></span>
                         </h1>
                         <p className="max-w-xl mx-auto mb-6 font-light text-gray-500 text-xl">
                             Finde die passenden Tools für dein E-Commerce Business. Vergleiche Software, entdecke Expertenbewertungen und wähle die perfekte Lösung – einfach & effizient

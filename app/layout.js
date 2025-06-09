@@ -10,7 +10,6 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="preconnect" href="//privacy-proxy.usercentrics.eu" />
                 <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script" />
-
                 <script id="usercentrics-cmp" data-settings-id="LyLFSKLFbONAlI" data-language="de" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async> </script>
                 <script src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" async></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
@@ -59,7 +58,7 @@ export default function RootLayout({ children }) {
                                     <li>
                                         <Link href="/audit" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Shop Audit</Link>
                                     </li>
-                                     <li>
+                                    <li>
                                         <Link href="/blog" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Blog</Link>
                                     </li>
                                 </ul>
@@ -126,7 +125,7 @@ export default function RootLayout({ children }) {
                                             Shop und Conversion
                                         </Link>
                                     </li>
-                                     <li className="mb-4">
+                                    <li className="mb-4">
                                         <Link
                                             href={`/kategorien/team-und-systeme`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"

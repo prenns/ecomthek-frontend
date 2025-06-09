@@ -76,7 +76,7 @@ export default function SoftwareCategoryListItem({ software }) {
         scoreSnippet = (
             <div className="text-sm flex items-center">
 
-                <p className="bg-blue-100 text-blue-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
+                <p className="bg-primary-100 text-primary-800 text-m font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-blue-200 dark:text-blue-800">
                     {expertRating.overall_score}/10
                 </p>
                 <p className="ms-2 font-medium text-gray-900 dark:text-white">Ecomthek Score</p>
@@ -114,14 +114,14 @@ export default function SoftwareCategoryListItem({ software }) {
                 </div>
                 <div>
                     {software.software_suitability.map(suitability => {
-                        return <span key={suitability.id} className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
+                        return <span key={suitability.id} className="bg-primary-100 text-primary-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">
                             {mapTypeToRevenue(suitability.type)}
                         </span>
                     })}
                 </div>
                 <p className="font-normal text-gray-500 dark:text-gray-400">{software.description}
                 </p>
-                <Link href={`/software/tool/${software.slug}`} className="block font-medium text-blue-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
+                <Link href={`/software/tool/${software.slug}`} className="block font-medium text-primary-600 dark:text-blue-500 hover:underline">Mehr erfahren</Link>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {featureList}
@@ -132,9 +132,8 @@ export default function SoftwareCategoryListItem({ software }) {
                 <Button
                     as={Link}
                     href={software.website_url}
-                    color="blue"
                     target="_blank"
-                    className="absolute font-bold font-sm lg:text-base top-0 right-5 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 inline-flex items-center"
+                    className="absolute font-bold font-sm lg:text-base top-0 right-5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-blue-300 inline-flex items-center"
                 >
 
                     <CiShare1 className="mr-2 h-5 w-5" />
