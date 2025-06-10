@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
                 <script id="usercentrics-cmp" data-settings-id="LyLFSKLFbONAlI" data-language="de" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async> </script>
                 <script src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" async></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
-
+                <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet"></link>
                 <Script data-usercentrics="Google Analytics" id="gtm" strategy="afterInteractive">
                     {`
                 (function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

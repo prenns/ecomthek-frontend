@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Satoshi', 'Inter', 'sans-serif'], // Fallback-Reihenfolge
+      },
       colors: {
         primary: {
           50: '#FFF8E1',
