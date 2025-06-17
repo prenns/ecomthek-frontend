@@ -12,9 +12,11 @@ export default function LandingMarketingCalendar() {
         <section className="dark:bg-gray-900">
             <div className="pt-8 px-4 mx-auto max-w-screen-xl text-center lg:pt-16 lg:px-12">
                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    Dein All-In-One
-                    <span className="from-[#210370] to-[#7AD9C4] bg-clip-text text-transparent bg-gradient-to-r"> E-Commerce Marketing Hub </span>
-                    in Notion.
+                    Dein All-In-One&nbsp;
+                   <span className="from-[#FFD54F] to-[#FF8F00] bg-clip-text text-transparent bg-gradient-to-r">
+E-Commerce Marketing Hub
+</span>
+                    &nbsp;in Notion.
                 </h1>
                 <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
                     Plane und verwalte alle Marketing Aktivitäten deiner E-Commerce Brand an einem Ort. Mit dem E-Commerce Markting Hub Template für Notion bringst du Struktur in dein Marketing.

@@ -27,12 +27,28 @@ module.exports = {
           900: '#E65100',
           950: '#BF360C',
         },
+        brand: {
+          dark: '#0F172A',    // Haupt-Hintergrund
+          light: '#F5F5F5',   // Flächenhintergrund
+        },
+        gray: {
+          900: '#1E293B',     // Textfarbe
+          200: '#E5E7EB',     // Border/Divider
+        },
+        accent: {
+          blue: '#3B82F6',
+          green: '#10B981',
+          red: '#EF4444',
+        },
+        accentHover: {
+          blue: '#2563EB',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.primary.600'),
+              color: theme('colors.primary.700'),
               '&:hover': {
                 color: theme('colors.primary.800'),
               },

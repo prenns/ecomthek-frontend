@@ -18,7 +18,7 @@ export default function LandingAuditPage() {
                     <div className="w-full md:w-3/4 mb-12 md:mb-0">
                         <a
                             href="#"
-                            className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-primary-700 bg-gray-100 rounded-full dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
+                            className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-primary-800 bg-primary-100 rounded-full dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
                         >
                             {" "}
                             <span className="ml-5 text-sm font-medium">

@@ -7,7 +7,7 @@ export default function BlogCard({ blogPost }) {
             <div className="flex justify-between items-center mb-5 text-gray-500">
                 {blogPost.categories.nodes.map(category => {
                     return (
-                        <span key={category.id} className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                        <span key={category.id} className="bg-brand-dark text-primary-500 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded dark:bg-primary-200 dark:text-primary-800">
                             <svg
                                 className="mr-1 w-3 h-3"
                                 fill="currentColor"
@@ -38,7 +38,7 @@ export default function BlogCard({ blogPost }) {
 
                 <Link
                     href={`/blog/${blogPost.slug}`}
-                    className="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                    className="inline-flex items-center font-medium text-primary-700 hover:underline"
                 >
                     Mehr lesen
                     <svg
