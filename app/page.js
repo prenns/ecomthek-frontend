@@ -3,8 +3,9 @@ import BlogSnippet from '../components/blog/blogSnippet';
 import SearchBar from '../components/searchbar';
 import { searchSoftware } from '../lib/api/software';
 import StackIcon from '../components/icons/stackIcon';
-import CheckBoxIcon from '../components/icons/checkBoxIcon';
-import TemplateIcon from '../components/icons/templateIcon';
+import CodeIcon from '../components/icons/codeIcon';
+import BookIcon from '../components/icons/bookIcon'
+import DictIcon from '../components/icons/dictIcon';
 
 export const metadata = {
     title: 'E-Commerce Knowledge on demand | Ecomthek',
@@ -148,11 +149,11 @@ export default async function Home() {
 
                             <Link href="/software">
                                 <h5 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    E-Commerce Software
+                                    Die besten Tools für deinen Shop
                                 </h5>
                             </Link>
                             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Finde die passenden Tools für dein E-Commerce Business. Vergleiche Software, entdecke Expertenbewertungen und wähle die perfekte Lösung – einfach & effizient
+                               Finde die besten Tools für deinen Onlineshop – von Versand bis E-Mail-Marketing. Vergleiche Funktionen, entdecke Expertenbewertungen und wähle die Software, die wirklich zu dir passt.
                             </p>
                             <Link
                                 href="/software"
@@ -181,7 +182,7 @@ export default async function Home() {
                             <div className="flex justify-center mb-4">
                                 <div className="bg-gray-100 dark:bg-gray-700 rounded-full w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center shrink-0">
 
-                                    <CheckBoxIcon className="w-10 lg:w-12 h-10 lg:h-12" />
+                                    <CodeIcon className="w-10 lg:w-12 h-10 lg:h-12" />
 
                                 </div>
                             </div>
@@ -223,7 +224,7 @@ export default async function Home() {
                                 <div className="bg-gray-100 dark:bg-gray-700 rounded-full w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center shrink-0">
 
 
-                                    <TemplateIcon className="w-10 lg:w-12 h-10 lg:h-12"/>
+                                    <BookIcon className="w-10 lg:w-12 h-10 lg:h-12"/>
 
                                 </div>
                             </div>
@@ -238,6 +239,48 @@ export default async function Home() {
                             </p>
                             <Link
                                 href="/notion-templates/marketing-calendar"
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            >
+                                Mehr erfahren
+                                <svg
+                                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 14 10"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                                    />
+                                </svg>
+                            </Link>
+                        </div>
+
+                        <div className="content-center text-center p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div className="flex justify-center mb-4">
+
+                                <div className="bg-gray-100 dark:bg-gray-700 rounded-full w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center shrink-0">
+
+
+                                    <DictIcon className="w-10 lg:w-12 h-10 lg:h-12"/>
+
+                                </div>
+                            </div>
+
+                            <Link href="/notion-templates/marketing-calendar">
+                                <h5 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Blog & Insights
+                                </h5>
+                            </Link>
+                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                               Bleib up to date mit fundierten Artikeln zu Tools, Versand, Shop-Optimierung und mehr. Ideal für wachsende Marken, die effizient skalieren wollen.
+                            </p>
+                            <Link
+                                href="/blog"
                                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
                                 Mehr erfahren

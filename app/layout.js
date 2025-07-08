@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
                                         <Link href="/" className="block py-2 pr-4 pl-3 border-b border-gray-100 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-primary-500 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-primary-500 lg:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</Link>
                                     </li>
                                     <li>
-                                        <Link href="/software" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Software</Link>
+                                        <Link href="/software" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Tools finden</Link>
                                     </li>
                                     <li>
                                         <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Templates</Link>
@@ -134,6 +134,14 @@ export default function RootLayout({ children }) {
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
                                         >
                                             Team und Systeme
+                                        </Link>
+                                    </li>
+                                      <li className="mb-4">
+                                        <Link
+                                            href={`/kategorien/logistik-operations`}
+                                            className="hover:underline hover:text-gray-900 dark:hover:text-white"
+                                        >
+                                            Logistik und Operations
                                         </Link>
                                     </li>
                                 </ul>
