@@ -47,17 +47,20 @@ export default async function Home() {
                     </Link>
 
                     <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                        E-Commerce knowledge   <span className="mx-1 relative inline-block stroke-current">
-                            on demand
+                         Dein Wissenshub für modernes<span className="mx-1 relative inline-block stroke-current">
+                            E-Commerce
                             <svg className="text-primary-600 absolute -bottom-0.1 w-full max-h-1.8" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
                                 preserveAspectRatio="none">
                                 <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
                             </svg>
                         </span>
                     </h1>
-                    <p className="mb-8 mt-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-                        Hochwertige Inhalte und praktische Ratschläge zu den Themen Performance Marketing, E-Mail Marketing, Produktentwicklung und vielen mehr.  Unser Ziel ist es, dir dabei zu helfen, dein E-Commerce Business erfolgreich aufzubauen und zu skalieren.
+                    <p className="mb-8 mt-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                        Ob Tools, Strategien oder konkrete Umsetzung: Ecomthek liefert dir genau die Inhalte, die du brauchst, um deinen Onlineshop effizient aufzubauen und nachhaltig zu skalieren – egal, ob du gerade startest oder bereits erste Erfolge erzielt hast.
                     </p>
+
+                   
+
 
                     <div className="mx-auto max-w-3xl">
                         <SearchBar searchSoftware={searchSoftwareSever} />
