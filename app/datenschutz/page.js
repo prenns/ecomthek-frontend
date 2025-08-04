@@ -13,6 +13,7 @@ export default function PrivacyPage() {
 
             <div className="flex-1 min-w-0">
               <>
+              <h1>Datenschutzerklärung</h1>
                 <div aria-label="table of contents" style={{ margin: "1rem 0 2rem 0" }}>
                   <strong style={{ paddingLeft: "0rem" }}>
                     1.
