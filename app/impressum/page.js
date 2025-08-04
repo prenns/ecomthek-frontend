@@ -93,21 +93,14 @@ export default function ImprintPage() {
                     <p className="mt-6 text-base font-normal text-gray-500 dark:text-gray-400">
                         <meta charSet="utf-8" />
                         <span data-mce-fragment={1}>
-                            Die Europäische Kommission stellt eine Plattform zur
-                            Online-Streitbeilegung (OS) bereit, die Sie hier finden&nbsp;
+                            Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.
                         </span>
-                        <a  className="text-blue-600 dark-text-blue-400 hover:underline"
-                            href="https://ec.europa.eu/consumers/odr/"
-                            data-mce-fragment={1}
-                            data-mce-href="https://ec.europa.eu/consumers/odr/"
-                            target="_blank"
-                        >
-                            https://ec.europa.eu/consumers/odr/
-                        </a>
+                        &nbsp;
+                    </p>
+                    <p className="mt-6 text-base font-normal text-gray-500 dark:text-gray-400">
+                        <meta charSet="utf-8" />
                         <span data-mce-fragment={1}>
-                            . Zur Teilnahme an einem Streitbeilegungsverfahren vor einer
-                            Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht
-                            bereit.
+                            Unser Unternehmen ist gemäß den gesetzlichen Bestimmungen vom Anwendungsbereich der Barrierefreiheitsanforderungen und somit von der Pflicht zur Erstellung und Bereitstellung einer Barrierefreiheitserklärung ausgenommen.
                         </span>
                         &nbsp;
                     </p>
