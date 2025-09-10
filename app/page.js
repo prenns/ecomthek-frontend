@@ -6,6 +6,7 @@ import StackIcon from '../components/icons/stackIcon';
 import CodeIcon from '../components/icons/codeIcon';
 import BookIcon from '../components/icons/bookIcon'
 import DictIcon from '../components/icons/dictIcon';
+import ServicesSection from '../components/homepage/servicesSection';
 
 export const metadata = {
     title: 'E-Commerce Knowledge on demand | Ecomthek',
@@ -125,7 +126,7 @@ export default async function Home() {
             </section> */}
 
 
-            <section className="bg-white dark:bg-gray-900">
+            {/* <section className="bg-white dark:bg-gray-900">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16">
                     <div className="max-w-2xl mx-auto text-center">
                         <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
@@ -310,7 +311,10 @@ export default async function Home() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
+
+
+                <ServicesSection />
 
 
             <BlogSnippet title="Du möchtest Dein E-Commerce Wissen erweitern?" description="Entdecke unsere neuesten Beiträge zum Thema E-Commerce" />

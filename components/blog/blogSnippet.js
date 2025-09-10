@@ -1,9 +1,9 @@
 import BlogCard from './blogCard';
 import { getLatestPosts } from '../../lib/api/posts';
-
+import Link from 'next/link';
 export default async function BlogSnippet({title, description}) {
 
-    const latestPosts = await getLatestPosts(3);
+    const latestPosts = await getLatestPosts(4);
 
     return (
 
@@ -28,6 +28,25 @@ export default async function BlogSnippet({title, description}) {
                     })}
                 </div>
             </div>
+            <div className="mb-12 text-center">
+                 <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-200"
+            >
+              Alle Artikel anzeigen
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
+                <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </Link>
+            </div>
+
+             
         </section>
     )
 }

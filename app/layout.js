@@ -20,13 +20,29 @@ export default function RootLayout({ children }) {
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TKFHN8M3');`}
                 </Script>
+
+                                <Script data-usercentrics="Meta" id="fb-pixel-init" strategy="afterInteractive">
+                                        {`
+                                                (function(f,b,e,v,n,t,s){
+                                                    if (f.fbq) return; n=f.fbq=function(){n.callMethod?
+                                                        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                                                    if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+                                                    n.queue=[]; t=b.createElement(e); t.async=!0; t.src=v;
+                                                    s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+                                                })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+                                                try {
+                                                    fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID || ''}');
+                                                    fbq('track', 'PageView');
+                                                } catch (e) { console.warn('fbq init error', e); }
+                                        `}
+                                </Script>
             </head>
 
             <body>
                 <noscript
                     dangerouslySetInnerHTML={{
-                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFHN8M3"
-                        height="0" width="0" style="display:none;visibility:hidden"/>`,
+                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFHN8M3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<img src="https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FB_PIXEL_ID || ''}&ev=PageView&noscript=1" height="1" width="1" style="display:none"/>`,
                     }}
                 />
                 <header>
@@ -52,9 +68,9 @@ export default function RootLayout({ children }) {
                                     <li>
                                         <Link href="/software" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Tools finden</Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Templates</Link>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <Link href="/audit" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Shop Audit</Link>
                                     </li>
@@ -103,7 +119,7 @@ export default function RootLayout({ children }) {
                                         </Link>
                                     </li>
                                     <li className="mb-4">
-                                      <CookieSettingsLink />
+                                        <CookieSettingsLink />
                                     </li>
                                     <li className="mb-4">
                                         <Link
@@ -136,7 +152,7 @@ export default function RootLayout({ children }) {
                                             Team und Systeme
                                         </Link>
                                     </li>
-                                      <li className="mb-4">
+                                    <li className="mb-4">
                                         <Link
                                             href={`/kategorien/logistik-operations`}
                                             className="hover:underline hover:text-gray-900 dark:hover:text-white"
@@ -146,7 +162,7 @@ export default function RootLayout({ children }) {
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            {/* <div>
                                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                                     Notion Templates
                                 </h2>
@@ -160,7 +176,7 @@ export default function RootLayout({ children }) {
                                         </Link>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
                             <div>
                                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                                     Services

@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Decorative animated gradient for hero backgrounds */
+@keyframes gradientShift {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.animate-gradient {
+  animation: gradientShift 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* small helper to reduce motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient {
+    animation: none;
+  }
+}
