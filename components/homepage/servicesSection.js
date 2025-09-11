@@ -13,7 +13,7 @@ export default function ServicesSection() {
         {/* Headline */}
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-            So können wir Dein Business unterstützen
+            So können wir Dich unterstützen
           </h2>
           <p className="mt-4 text-base font-normal text-gray-700 sm:text-xl dark:text-gray-300">
             Entdecke unsere Services und Produkte, um deinen Onlineshop auf das nächste Level zu bringen.
@@ -23,7 +23,7 @@ export default function ServicesSection() {
         {/* Grid */}
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:gap-8">
           {/* Tools */}
-          <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+          {/* <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
             <div className="mb-6 flex justify-center">
               <div className="flex h-24 w-24 items-center justify-center rounded-full border border-primary-100 bg-primary-50 text-primary-600 dark:border-primary-200/40">
                 <CubeIcon className="h-12 w-12" />
@@ -55,7 +55,7 @@ export default function ServicesSection() {
                 </svg>
               </span>
             </Link>
-          </div>
+          </div> */}
 
           {/* Audit */}
           <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
@@ -71,8 +71,7 @@ export default function ServicesSection() {
               </h5>
             </Link>
             <p className="mb-6 text-gray-700 dark:text-gray-300">
-              Wir nehmen deinen Onlineshop unter die Lupe und erstellen einen individuellen Handlungsplan, damit du auf
-              das nächste Level skalieren kannst.
+              Wir analysieren deinen Shop und deine Ads, finden die 3 größten Umsatz-Leaks und liefern dir in 72 Stunden einen klaren Action Plan – damit du sofort mehr Umsatz machst.
             </p>
 
             <Link
@@ -128,7 +127,7 @@ export default function ServicesSection() {
           </div> */}
 
           {/* Wissen & Lernen */}
-          {/* <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+          <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
             <div className="mb-6 flex justify-center">
               <div className="flex h-24 w-24 items-center justify-center rounded-full border border-primary-100 bg-primary-50 text-primary-600 dark:border-primary-200/40">
                 <BookOpenIcon className="h-12 w-12" />
@@ -141,8 +140,7 @@ export default function ServicesSection() {
               </h5>
             </Link>
             <p className="mb-6 text-gray-700 dark:text-gray-300">
-              Bleib up to date mit fundierten Artikeln zu Tools, Versand, Shop-Optimierung und mehr. Ideal für wachsende
-              Marken, die effizient skalieren wollen.
+              Lerne, wie du Umsatz-Leaks schließt, Prozesse optimierst und dein E-Commerce Business nachhaltig skalierst – mit fundierten Artikeln direkt aus der Praxis.
             </p>
 
             <Link
@@ -160,7 +158,7 @@ export default function ServicesSection() {
                 </svg>
               </span>
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

@@ -65,9 +65,9 @@ export default function RootLayout({ children }) {
                                     <li>
                                         <Link href="/" className="block py-2 pr-4 pl-3 border-b border-gray-100 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-primary-500 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-primary-500 lg:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link href="/software" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Tools finden</Link>
-                                    </li>
+                                    </li> */}
                                     {/* <li>
                                         <Link href="/notion-templates/marketing-calendar" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Templates</Link>
                                     </li> */}
@@ -193,7 +193,7 @@ export default function RootLayout({ children }) {
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            {/* <div>
                                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                                     Top E-Commerce Software
                                 </h2>
@@ -243,7 +243,7 @@ export default function RootLayout({ children }) {
                                         </Link>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="mt-8 text-center sm:mt-12 lg:mt-16">
                             <a
