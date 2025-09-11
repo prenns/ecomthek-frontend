@@ -52,7 +52,7 @@ export default async function Home() {
 
                     {/* Heading */}
                     <h1 className="mt-6 mb-4 text-4xl font-extrabold tracking-tight leading-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                        Dein Growth Hub für{" "}
+                        Dein AI Growth Hub für profitableres{" "}
                         <span className="relative mx-1 inline-block">
                             <span className="bg-gradient-to-r from-gray-900 via-primary-700 to-cyan-600 bg-clip-text text-transparent dark:from-white dark:via-primary-400 dark:to-cyan-300">
                                 E-Commerce
@@ -63,7 +63,7 @@ export default async function Home() {
                     </h1>
 
                     <p className="mx-auto mb-8 mt-8 max-w-3xl text-lg text-gray-600 lg:text-xl dark:text-gray-400">
-                        Wir helfen dir, dein Business profitabler zu machen: mit Services, fundiertem Wissen und bald auch mit Software, die dir Klarheit über deine wichtigsten Zahlen gibt.
+                       Wir kombinieren Services, Wissen und AI-gestützte Tools, um dir Klarheit über deine wichtigsten Zahlen zu geben und dein Wachstum nachhaltig zu beschleunigen.
                     </p>
 
                     {/* CTAs (optional) */}
