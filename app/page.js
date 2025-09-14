@@ -16,7 +16,7 @@ export default async function Home() {
         <div>
             <section className="relative overflow-hidden bg-white dark:bg-gray-950">
                
-                <Particles className="z-[1]" />
+             
                 <AnimatedBackground />
                 <div className="relative z-10 py-14 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
                     {/* Promo badge */}
