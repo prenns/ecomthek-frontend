@@ -2,6 +2,8 @@ import Link from 'next/link';
 import BlogSnippet from '../components/blog/blogSnippet';
 import ServicesSection from '../components/homepage/servicesSection';
 import AboutSection from '../components/homepage/aboutSection';
+import AnimatedBackground from '../components/ui/animatedBackground';
+import Particles from '../components/ui/particles';
 
 export const metadata = {
     title: 'Dein Growth Hub für E-Comemrce | Ecomthek',
@@ -13,29 +15,10 @@ export default async function Home() {
     return (
         <div>
             <section className="relative overflow-hidden bg-white dark:bg-gray-950">
-                {/* Layer: soft gradient background */}
-                <div className="pointer-events-none absolute inset-0 -z-20 bg-gradient-to-b from-white via-white to-gray-50 dark:from-gray-950 dark:via-gray-950 dark:to-black" />
-
-                {/* Layer: subtle grid with radial mask */}
-                <div
-                    className="
-      pointer-events-none absolute inset-0 -z-10
-      [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]
-      bg-[linear-gradient(to_right,theme(colors.gray.200/.25)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.gray.200/.25)_1px,transparent_1px)]
-      bg-[size:32px_32px]
-      dark:bg-[linear-gradient(to_right,theme(colors.gray.800/.45)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.gray.800/.45)_1px,transparent_1px)]
-    "
-                />
-
-                {/* Layer: AI-ish glow blobs */}
-                <div className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full blur-3xl 
-                  bg-[radial-gradient(closest-side,theme(colors.primary.500/.18),transparent)]" />
-                <div className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full blur-3xl 
-                  bg-[radial-gradient(closest-side,theme(colors.indigo.500/.16),transparent)] animate-pulse" />
-                <div className="pointer-events-none absolute -bottom-32 -right-16 h-80 w-80 rounded-full blur-3xl 
-                  bg-[radial-gradient(closest-side,theme(colors.cyan.400/.18),transparent)] motion-safe:animate-pulse" />
-
-                <div className="relative py-14 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
+               
+                <Particles className="z-[1]" />
+                <AnimatedBackground />
+                <div className="relative z-10 py-14 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
                     {/* Promo badge */}
                     <Link
                         href="/audit"

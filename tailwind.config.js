@@ -10,6 +10,34 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        float: {
+          '0%,100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' }
+        },
+        'aurora-x': {
+          '0%,100%': { transform: 'translateX(-10%)' },
+          '50%': { transform: 'translateX(10%)' }
+        },
+        'aurora-y': {
+          '0%,100%': { transform: 'translateY(-6%)' },
+          '50%': { transform: 'translateY(6%)' }
+        },
+        'spin-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' }
+        }
+      },
+      animation: {
+         float: 'float 6s ease-in-out infinite',
+        'aurora-x': 'aurora-x 16s ease-in-out infinite',
+        'aurora-y': 'aurora-y 24s ease-in-out infinite',
+        'spin-slow': 'spin-slow 60s linear infinite'
+      },
+      backgroundImage: {
+        'grid-s': 'linear-gradient(to right, rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,.06) 1px, transparent 1px)',
+        'grid-s-dark': 'linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px)',
+      },
       fontFamily: {
         sans: ['Satoshi', 'Inter', 'sans-serif'], // Fallback-Reihenfolge
       },
