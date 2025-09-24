@@ -15,8 +15,8 @@ export default async function Home() {
     return (
         <div>
             <section className="relative overflow-hidden bg-white dark:bg-gray-950">
-               
-             
+
+
                 <AnimatedBackground />
                 <div className="relative z-10 py-14 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
                     {/* Promo badge */}
@@ -35,16 +35,17 @@ export default async function Home() {
 
                     {/* Heading */}
                     <h1 className="mt-6 mb-4 text-4xl font-extrabold tracking-tight leading-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                        Dein AI Automation Hub für profitableres{" "}
+                        Wir machen deinen Onlineshop{" "}
                         <span className="relative mx-1 inline-block">
                             <span className="bg-gradient-to-r from-gray-900 via-primary-700 to-cyan-600 bg-clip-text text-transparent dark:from-white dark:via-primary-400 dark:to-cyan-300">
-                                E-Commerce
+                                profitabel
                             </span>
                         </span>
                     </h1>
 
                     <p className="mx-auto mb-8 mt-8 max-w-3xl text-lg text-gray-600 lg:text-xl dark:text-gray-400">
-                      Wir verbinden Services, Wissen und AI-gestützte Automatisierungen, damit du weniger operativen Ballast hast, jederzeit deine Zahlen im Griff behältst – und dein Business profitabel wächst
+                        Wir sind keine Gurus und keine Agentur.
+                        Als echte E-Commerce-Unternehmer mit eigenen Brands und siebenstelligen Jahresumsätzen kennen wir deine täglichen Herausforderungen – und zeigen dir die Hebel, die wirklich zählen, damit dein Business profitabel wächst.
                     </p>
 
                     {/* CTAs (optional) */}
@@ -75,7 +76,7 @@ export default async function Home() {
 
             <AboutSection />
 
-      
+
 
 
 
