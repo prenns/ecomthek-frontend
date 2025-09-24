@@ -3,11 +3,10 @@ import BlogSnippet from '../components/blog/blogSnippet';
 import ServicesSection from '../components/homepage/servicesSection';
 import AboutSection from '../components/homepage/aboutSection';
 import AnimatedBackground from '../components/ui/animatedBackground';
-import Particles from '../components/ui/particles';
 
 export const metadata = {
-    title: 'Dein Growth Hub für E-Comemrce | Ecomthek',
-    description: 'Hochwertige Inhalte und praktische Ratschläge zu den Themen Performance Marketing, E-Mail Marketing, Produktentwicklung und vielen mehr. Unser Ziel ist es, dir dabei zu helfen, dein E-Commerce Business erfolgreich aufzubauen und zu skalieren.',
+    title: 'Wir machen deinen Onlineshop profitabel | Ecomthek',
+    description: 'Als echte E-Commerce-Unternehmer mit eigenen Brands und siebenstelligen Jahresumsätzen kennen wir deine täglichen Herausforderungen – und zeigen dir die Hebel, die wirklich zählen, damit dein Business profitabel wächst.',
 };
 
 export default async function Home() {
